@@ -1,5 +1,20 @@
 {
-  "name": "root",
+  "name": "kaitlin-brennan-dot-com",
+  "version": "1.0.0",
+  "author": "Lucas Homer",
+  "scripts": {
+    "clean": "lerna clean",
+    "deploy": "lerna run deploy",
+    "empty-cache": "lerna run empty-cache",
+    "init": "cd studio && sanity init && lerna run graphql-deploy",
+    "format": "lerna run format",
+    "graphql-deploy": "lerna run graphql-deploy",
+    "lint": "lerna run lint",
+    "postinstall": "lerna bootstrap",
+    "sanity-deploy": "lerna run sanity-deploy",
+    "start": "lerna run empty-cache && lerna run start --parallel",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "private": false,
   "devDependencies": {
     "lerna": "^3.22.0"
