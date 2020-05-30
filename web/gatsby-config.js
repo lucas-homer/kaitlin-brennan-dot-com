@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Kaitlin Brennan`,
+    description: `Kaitlin Brennan is a content creation expert. This is her website to showcase her work samples, to get in contact with her, and to read her blog.`,
+    author: `lucas homer`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -18,13 +18,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `kaitlin-brennan-dot-com`,
+        short_name: `kaitlinbrennan.com`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#69A1AC`,
+        theme_color: `#69A1AC`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/kb-icon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
