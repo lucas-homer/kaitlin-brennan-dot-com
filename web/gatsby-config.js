@@ -1,3 +1,8 @@
+require("dotenv").config()
+const {
+  api: { projectId, dataset },
+} = requireConfig("../studio/sanity.json")
+
 module.exports = {
   siteMetadata: {
     title: `Kaitlin Brennan`,
@@ -27,8 +32,36 @@ module.exports = {
         icon: `src/images/kb-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: "gatsby-source-sanity",
+      options: {
+        projectId,
+        dataset,
+        // To enable preview of drafts, copy .env-example into .env,
+        // and add a token with read permissions
+        token: process.env.SANITY_TOKEN,
+        watchMode: true,
+        overlayDrafts: true,
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
+}
+
+function requireConfig(path) {
+  try {
+    return require(path)
+  } catch (e) {
+    console.error(
+      "Failed to require sanity.json. Fill in projectId and dataset name manually in gatsby-config.js"
+    )
+    return {
+      api: {
+        projectId: process.env.SANITY_PROJECT_ID || "",
+        dataset: process.env.SANITY_DATASET || "",
+      },
+    }
+  }
 }
