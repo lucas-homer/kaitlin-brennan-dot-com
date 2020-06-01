@@ -30,6 +30,7 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "empty-cache": "gatsby clean",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
