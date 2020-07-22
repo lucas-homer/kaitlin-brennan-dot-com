@@ -5,6 +5,8 @@
   "version": "0.1.0",
   "author": "Lucas Homer",
   "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@mdx-js/react": "^1.6.5",
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/image-url": "^0.140.19",
     "date-fns": "^2.14.0",
@@ -15,13 +17,15 @@
     "gatsby-plugin-offline": "^3.2.3",
     "gatsby-plugin-react-helmet": "^3.3.1",
     "gatsby-plugin-sharp": "^2.6.4",
+    "gatsby-plugin-theme-ui": "^0.3.0",
     "gatsby-source-filesystem": "^2.3.4",
     "gatsby-source-sanity": "^5.0.6",
     "gatsby-transformer-sharp": "^2.5.2",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^6.0.0"
+    "react-helmet": "^6.0.0",
+    "theme-ui": "^0.3.1"
   },
   "devDependencies": {
     "prettier": "2.0.5"
