@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-// import React from "react"
 import { jsx } from "theme-ui"
 
 const Header = ({ siteTitle }) => (
@@ -10,29 +9,97 @@ const Header = ({ siteTitle }) => (
       // this uses the value from `theme.space[4]`
       padding: 4,
       // these use values from `theme.colors`
-      color: "background",
-      backgroundColor: "primary",
+      backgroundColor: "background",
+      display: "flex",
+      alignItems: "baseline",
+      justifyContent: "space-between",
     }}
   >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+    <h1 style={{ margin: 0 }}>
+      <Link
+        to="/"
+        sx={{
+          textDecoration: `none`,
+          color: "text",
+          fontFamily: "heading",
+        }}
+      >
+        {siteTitle}
+      </Link>
+    </h1>
+    <nav
+      sx={{
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "baseline",
       }}
     >
-      <h1 style={{ margin: 0 }}>
+      <h4>
         <Link
-          to="/"
-          style={{
-            color: `white`,
+          sx={{
+            color: "text",
+            padding: [0, 4],
             textDecoration: `none`,
+            fontFamily: "heading",
+            "&:hover": {
+              borderBottom: theme => `2px solid ${theme.colors.primaryLight}`,
+            },
           }}
+          to="/blog"
         >
-          {siteTitle}
+          Blog
         </Link>
-      </h1>
-    </div>
+      </h4>
+      <h4>
+        <Link
+          sx={{
+            color: "text",
+            padding: [0, 4],
+            textDecoration: `none`,
+            fontFamily: "heading",
+            "&:hover": {
+              borderBottom: theme => `2px solid ${theme.colors.primaryLight}`,
+            },
+          }}
+          to="/samples"
+        >
+          Samples
+        </Link>
+      </h4>
+
+      <h4>
+        <Link
+          sx={{
+            color: "text",
+            padding: [0, 4],
+            textDecoration: `none`,
+            fontFamily: "heading",
+            "&:hover": {
+              borderBottom: theme => `2px solid ${theme.colors.primaryLight}`,
+            },
+          }}
+          to="/about"
+        >
+          About
+        </Link>
+      </h4>
+      <h4>
+        <Link
+          sx={{
+            color: "text",
+            padding: [0, 4],
+            textDecoration: `none`,
+            fontFamily: "heading",
+            "&:hover": {
+              borderBottom: theme => `2px solid ${theme.colors.primaryLight}`,
+            },
+          }}
+          to="/contact"
+        >
+          Contact
+        </Link>
+      </h4>
+    </nav>
   </header>
 )
 
