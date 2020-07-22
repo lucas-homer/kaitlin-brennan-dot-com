@@ -1,4 +1,7 @@
+import React from "react"
 import { graphql } from "gatsby"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
 
 export const query = graphql`
   query BlogPageQuery {
@@ -26,3 +29,12 @@ export const query = graphql`
     }
   }
 `
+
+const BlogPage = () => (
+  <Layout>
+    <SEO title="Blog" />
+    <h2>Blog</h2>
+  </Layout>
+)
+
+export default BlogPage
