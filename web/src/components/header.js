@@ -24,7 +24,6 @@ const Header = ({ siteTitle }) => (
           textDecoration: `none`,
           variant: "text.heading",
           color: "text",
-          // variant: "",
         }}
       >
         {siteTitle}
