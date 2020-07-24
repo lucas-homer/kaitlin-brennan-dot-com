@@ -7,9 +7,11 @@ const Header = ({ siteTitle }) => (
   <header
     sx={{
       // this uses the value from `theme.space[4]`
-      padding: 4,
+      paddingTop: 4,
+      paddingBottom: 2,
+      paddingX: 4,
       // these use values from `theme.colors`
-      backgroundColor: "background",
+      backgroundColor: "backgroundGrey",
       display: "flex",
       alignItems: "baseline",
       justifyContent: "space-between",
@@ -20,8 +22,9 @@ const Header = ({ siteTitle }) => (
         to="/"
         sx={{
           textDecoration: `none`,
+          variant: "text.heading",
           color: "text",
-          fontFamily: "heading",
+          // variant: "",
         }}
       >
         {siteTitle}
@@ -34,71 +37,63 @@ const Header = ({ siteTitle }) => (
         alignItems: "baseline",
       }}
     >
-      <h4>
-        <Link
-          sx={{
-            color: "text",
-            padding: [0, 4],
-            textDecoration: `none`,
-            fontFamily: "heading",
-            "&:hover": {
-              borderBottom: theme => `2px solid ${theme.colors.primaryLight}`,
-            },
-          }}
-          to="/blog"
-        >
-          Blog
-        </Link>
-      </h4>
-      <h4>
-        <Link
-          sx={{
-            color: "text",
-            padding: [0, 4],
-            textDecoration: `none`,
-            fontFamily: "heading",
-            "&:hover": {
-              borderBottom: theme => `2px solid ${theme.colors.primaryLight}`,
-            },
-          }}
-          to="/samples"
-        >
-          Samples
-        </Link>
-      </h4>
+      <Link
+        sx={{
+          color: "text",
+          padding: [0, 4],
+          textDecoration: `none`,
+          variant: "text.heading",
+          "&:hover": {
+            borderBottom: theme => `2px solid ${theme.colors.highlight}`,
+          },
+        }}
+        to="/blog"
+      >
+        Blog
+      </Link>
+      <Link
+        sx={{
+          color: "text",
+          padding: [0, 4],
+          textDecoration: `none`,
+          variant: "text.heading",
+          "&:hover": {
+            borderBottom: theme => `2px solid ${theme.colors.highlight}`,
+          },
+        }}
+        to="/samples"
+      >
+        Samples
+      </Link>
 
-      <h4>
-        <Link
-          sx={{
-            color: "text",
-            padding: [0, 4],
-            textDecoration: `none`,
-            fontFamily: "heading",
-            "&:hover": {
-              borderBottom: theme => `2px solid ${theme.colors.primaryLight}`,
-            },
-          }}
-          to="/about"
-        >
-          About
-        </Link>
-      </h4>
-      <h4>
-        <Link
-          sx={{
-            color: "text",
-            padding: [0, 4],
-            textDecoration: `none`,
-            fontFamily: "heading",
-            "&:hover": {
-              borderBottom: theme => `2px solid ${theme.colors.primaryLight}`,
-            },
-          }}
-          to="/contact"
-        >
-          Contact
-        </Link>
-      </h4>
+      <Link
+        sx={{
+          color: "text",
+          padding: [0, 4],
+          textDecoration: `none`,
+          variant: "text.heading",
+          "&:hover": {
+            borderBottom: theme => `2px solid ${theme.colors.highlight}`,
+          },
+        }}
+        to="/about"
+      >
+        About
+      </Link>
+      <Link
+        sx={{
+          color: "text",
+          padding: [0, 4],
+          textDecoration: `none`,
+          variant: "text.heading",
+          "&:hover": {
+            borderBottom: theme => `2px solid ${theme.colors.highlight}`,
+          },
+        }}
+        to="/contact"
+      >
+        Contact
+      </Link>
     </nav>
   </header>
 )

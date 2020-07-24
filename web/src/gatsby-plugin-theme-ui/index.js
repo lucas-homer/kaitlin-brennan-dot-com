@@ -1,11 +1,12 @@
 export default {
   colors: {
     text: "#0A0A0A",
-    background: "#F2F2F2",
+    backgroundGrey: "#F2F2F2",
+    background: "#fff",
     white: "#fff",
     primary: "#DB2721",
     secondary: "#69A1AC",
-    primaryLight: "#FF4133",
+    highlight: "#FF4133",
     secondaryLight: "#89C5CC",
     muted: "#828282",
   },
@@ -19,6 +20,7 @@ export default {
     body:
       'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: "Georgia, serif",
+    monospace: "Menlo, monospace",
   },
   fontWeights: {
     body: 400,
@@ -46,5 +48,42 @@ export default {
       py: "space[1]",
     },
   },
-  styles: {},
+  text: {
+    heading: {
+      fontFamily: "heading",
+      lineHeight: "heading",
+      fontWeight: "heading",
+    },
+  },
+  styles: {
+    root: {
+      fontFamily: "body",
+      lineHeight: "body",
+      fontWeight: "body",
+    },
+    h1: {
+      variant: "text.heading",
+      fontSize: 9,
+    },
+    h2: {
+      variant: "text.heading",
+      fontSize: 8,
+    },
+    h3: {
+      variant: "text.heading",
+      fontSize: 7,
+    },
+    h4: {
+      variant: "text.heading",
+      fontSize: 5,
+    },
+    h5: {
+      variant: "text.heading",
+      fontSize: 3,
+    },
+    h6: {
+      variant: "text.heading",
+      fontSize: 1,
+    },
+  },
 }
