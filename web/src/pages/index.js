@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-
+import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import HumaaanLanding from "../components/humaaan-landing"
@@ -55,7 +55,15 @@ const IndexPage = () => (
             fontSize: 4,
           }}
         >
-          I'll bite
+          <Link
+            to="/contact"
+            sx={{
+              textDecoration: `none`,
+              color: "white",
+            }}
+          >
+            I'll bite
+          </Link>
         </button>
       </article>
     </section>
