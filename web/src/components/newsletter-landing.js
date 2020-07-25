@@ -12,7 +12,7 @@ export default function NewsletterLanding() {
         justifyContent: "center",
         padding: 4,
         maxWidth: "landingCardContainer",
-        margin: "0 auto",
+        margin: "2rem auto",
       }}
     >
       <div

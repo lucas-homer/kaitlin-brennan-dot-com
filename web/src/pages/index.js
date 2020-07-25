@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import HumaaanLanding from "../components/humaaan-landing"
 
+import SamplesCard from "../components/samples-landing"
 import NewsletterForm from "../components/newsletter-landing"
 
 const IndexPage = () => (
@@ -58,6 +59,7 @@ const IndexPage = () => (
         </button>
       </article>
     </section>
+    <SamplesCard />
     <NewsletterForm />
   </Layout>
 )
