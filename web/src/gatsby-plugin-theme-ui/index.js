@@ -14,7 +14,10 @@ export default {
     primary: "0 4 10 #CECECE",
   },
   radii: {
-    primary: "10",
+    primary: "10px",
+  },
+  borders: {
+    primary: "2px solid #DB2721",
   },
   fonts: {
     body:
@@ -38,14 +41,26 @@ export default {
     primary: {
       color: "white",
       bg: "primary",
-      px: "space[2, 3, 4]",
-      py: "space[1]",
+      px: [5, 6],
+      py: [0],
+      border: "primary",
+      borderRadius: "primary",
+      whiteSpace: "nowrap",
+      "&:hover": {
+        cursor: "pointer",
+      },
     },
     secondary: {
       color: "primary",
       bg: "white",
-      px: "space[2, 3, 4]",
-      py: "space[1]",
+      px: [2, 3, 4],
+      py: [1],
+      border: "primary",
+      borderRadius: "primary",
+      whiteSpace: "nowrap",
+      "&:hover": {
+        cursor: "pointer",
+      },
     },
   },
   text: {
