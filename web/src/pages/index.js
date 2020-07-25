@@ -1,10 +1,11 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 
-// import React from "react"
 import Layout from "../components/layout"
-import HumaaanLanding from "../components/humaaan-landing"
 import SEO from "../components/seo"
+import HumaaanLanding from "../components/humaaan-landing"
+
+import NewsletterForm from "../components/newsletter-landing"
 
 const IndexPage = () => (
   <Layout>
@@ -57,6 +58,7 @@ const IndexPage = () => (
         </button>
       </article>
     </section>
+    <NewsletterForm />
   </Layout>
 )
 
