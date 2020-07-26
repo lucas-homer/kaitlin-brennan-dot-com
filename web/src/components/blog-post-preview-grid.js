@@ -1,20 +1,51 @@
-import React from "react"
+/** @jsx jsx */
+import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 import BlogPostPreview from "./blog-post-preview"
 
 function BlogPostPreviewGrid(props) {
   return (
-    <div>
-      {props.title && (
-        <h2>
-          {props.browseMoreHref ? (
-            <Link to={props.browseMoreHref}>{props.title}</Link>
-          ) : (
-            props.title
-          )}
+    <section
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        padding: 4,
+        margin: "2rem auto",
+      }}
+    >
+      <Link
+        to={props.browseMoreHref}
+        sx={{
+          textDecoration: `none`,
+          variant: "text.heading",
+          color: "text",
+          textAlign: "center",
+        }}
+      >
+        <h2
+          sx={{
+            variant: "text.heading",
+          }}
+        >
+          {props.title}
         </h2>
-      )}
-      <ul>
+        <h4
+          sx={{
+            variant: "text.heading",
+          }}
+        >
+          {props.subtitle}
+        </h4>
+      </Link>
+
+      <ul
+        sx={{
+          listStyleType: "none",
+          display: "flex",
+          flexWrap: "wrap",
+        }}
+      >
         {props.nodes &&
           props.nodes.map(node => (
             <li key={node.id}>
@@ -23,11 +54,23 @@ function BlogPostPreviewGrid(props) {
           ))}
       </ul>
       {props.browseMoreHref && (
-        <div>
-          <Link to={props.browseMoreHref}>Browse more</Link>
-        </div>
+        <h4
+          sx={{
+            margin: "0 0 0 auto",
+          }}
+        >
+          <Link
+            to={props.browseMoreHref}
+            sx={{ color: "text", textDecoration: `none` }}
+          >
+            Browse more{" "}
+            <span aria-label="right arrow" role="img">
+              ➡️
+            </span>
+          </Link>
+        </h4>
       )}
-    </div>
+    </section>
   )
 }
 
