@@ -19,14 +19,23 @@ export default function SamplesLanding() {
           textAlign: "center",
         }}
       >
-        💥 Digital Marketing 💥
+        <span aria-label="boom" role="img">
+          💥
+        </span>{" "}
+        Digital Marketing{" "}
+        <span aria-label="boom" role="img">
+          💥
+        </span>
       </h2>
       <h5
         sx={{
           textAlign: "center",
         }}
       >
-        📈 I am a pro at growth marketing.
+        <span aria-label="line graph showing growth" role="img">
+          📈
+        </span>{" "}
+        I am a pro at growth marketing.
       </h5>
       <ul
         sx={{

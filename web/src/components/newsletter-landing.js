@@ -25,7 +25,10 @@ export default function NewsletterLanding() {
             marginBottom: "0px",
           }}
         >
-          I offer delivery 💅
+          I offer delivery{" "}
+          <span role="img" aria-label="painting fingernails">
+            💅
+          </span>
         </h2>
         <h4>Homemade thoughts to your inbox!</h4>
       </div>
