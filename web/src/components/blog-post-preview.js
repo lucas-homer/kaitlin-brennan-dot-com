@@ -7,7 +7,7 @@ import BlockText from "./block-text"
 
 export default function BlogPostPreview(props) {
   return (
-    <Link to={getBlogUrl(props.publishedAt, props.slug.current)}>
+    <Link to={getBlogUrl(props.publishedAt, props.slug)}>
       <h3>{props.title}</h3>
       <div>
         {props.mainImage && props.mainImage.asset && (

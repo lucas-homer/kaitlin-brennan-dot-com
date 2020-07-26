@@ -14,7 +14,9 @@ export function filterOutDocsWithoutSlugs({ slug }) {
 }
 
 export function getBlogUrl(publishedAt, slug) {
-  return `/blog/${format(publishedAt, "YYYY/MM")}/${slug.current || slug}/`
+  // Sanity gives us ISO strings, and format only takes Date | number
+  const parsedDate = Date.parse(publishedAt)
+  return `/blog/${format(parsedDate, "yyyy/MM")}/${slug.current || slug}/`
 }
 
 export function buildImageObj(source) {

@@ -10,6 +10,7 @@ import HumaaanLanding from "../components/humaaan-landing"
 
 import SamplesCard from "../components/samples-landing"
 import NewsletterForm from "../components/newsletter-landing"
+import BlogPostPreviewGrid from "../components/blog-post-preview-grid"
 
 export const query = graphql`
   query IndexPageQuery {
@@ -88,6 +89,8 @@ const IndexPage = props => {
     )
   }
 
+  console.log("postNodes", postNodes)
+
   return (
     <Layout>
       <SEO
@@ -152,6 +155,13 @@ const IndexPage = props => {
         </article>
       </section>
       <SamplesCard />
+      {postNodes && (
+        <BlogPostPreviewGrid
+          title="Latest blog posts"
+          nodes={postNodes}
+          browseMoreHref="/blog/"
+        />
+      )}
       <NewsletterForm />
     </Layout>
   )
