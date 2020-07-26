@@ -36,6 +36,7 @@ export default {
   },
   sizes: {
     landingCardContainer: 600,
+    blogPreviewCard: 250,
   },
   fontSizes: [12, 14, 16, 18, 20, 24, 30, 36, 48, 60, 72],
   space: [0, 4, 8, 12, 16, 24, 32, 48, 64, 96, 128, 256, 512],
@@ -64,6 +65,18 @@ export default {
       "&:hover": {
         cursor: "pointer",
       },
+    },
+  },
+  cards: {
+    blogPreview: {
+      bg: "backgroundGrey",
+      maxWidth: "blogPreviewCard",
+      borderRadius: "primary",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "left",
+      padding: 3,
+      margin: 2,
     },
   },
   inputs: {
