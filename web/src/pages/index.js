@@ -26,7 +26,7 @@ export const query = graphql`
     }
 
     posts: allSanityPost(
-      limit: 2
+      limit: 3
       sort: { fields: [publishedAt], order: DESC }
     ) {
       edges {
@@ -157,7 +157,8 @@ const IndexPage = props => {
       <SamplesCard />
       {postNodes && (
         <BlogPostPreviewGrid
-          title="Latest blog posts"
+          title="What is that girl talking about?"
+          subtitle="I write a lot. Here's the recent stuff."
           nodes={postNodes}
           browseMoreHref="/blog/"
         />
