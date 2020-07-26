@@ -13,10 +13,15 @@ import NewsletterForm from "../components/newsletter-landing"
 
 export const query = graphql`
   query IndexPageQuery {
-    site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
-      title
-      description
-      keywords
+    site: allSanitySiteSettings {
+      edges {
+        node {
+          keywords
+          author
+          description
+          title
+        }
+      }
     }
 
     posts: allSanityPost(
@@ -71,7 +76,8 @@ const IndexPage = props => {
     )
   }
 
-  const site = (data || {}).site
+  const site = (data || {}).site ? mapEdgesToNodes(data.site) : []
+
   const postNodes = (data || {}).posts
     ? mapEdgesToNodes(data.posts).filter(filterOutDocsWithoutSlugs)
     : []
