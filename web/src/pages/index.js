@@ -6,9 +6,7 @@ import SEO from "../components/seo"
 import GraphQLErrorList from "../components/graphql-error-list"
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from "../lib/helpers"
 
-import HumaaanLanding from "../components/humaaan-landing"
 import Divider from "../components/divider"
-
 import SamplesCard from "../components/samples-landing"
 import NewsletterForm from "../components/newsletter-landing"
 import BlogPostPreviewGrid from "../components/blog-post-preview-grid"
@@ -93,68 +91,12 @@ const IndexPage = props => {
   console.log("postNodes", postNodes)
 
   return (
-    <Layout>
+    <Layout isHeroLayout={true}>
       <SEO
         title={site.title}
         description={site.description}
         keywords={site.keywords}
       />
-      <section
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <HumaaanLanding
-          sx={{
-            maxWidth: "300px",
-            minWidth: "150px",
-          }}
-        />
-        <article
-          sx={{
-            display: "flex",
-            alignItems: "baseline",
-            flexWrap: "wrap",
-          }}
-        >
-          <aside
-            sx={{
-              paddingY: [2, 3, 4],
-              paddingRight: [2, 3, 4],
-              paddingLeft: "0",
-              marginRight: [2, 3, 4],
-            }}
-          >
-            <h1
-              sx={{
-                marginBottom: "0px",
-              }}
-            >
-              Content Creator
-            </h1>
-            <h2>Clicks queen</h2>
-          </aside>
-          <button
-            type="button"
-            sx={{
-              variant: "buttons.primary",
-              fontSize: 4,
-            }}
-          >
-            <Link
-              to="/contact"
-              sx={{
-                textDecoration: `none`,
-                color: "white",
-              }}
-            >
-              I'll bite
-            </Link>
-          </button>
-        </article>
-      </section>
       <SamplesCard />
       <Divider />
       {postNodes && (
