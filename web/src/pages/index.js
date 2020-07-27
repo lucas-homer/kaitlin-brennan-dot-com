@@ -7,6 +7,7 @@ import GraphQLErrorList from "../components/graphql-error-list"
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from "../lib/helpers"
 
 import HumaaanLanding from "../components/humaaan-landing"
+import Divider from "../components/divider"
 
 import SamplesCard from "../components/samples-landing"
 import NewsletterForm from "../components/newsletter-landing"
@@ -155,6 +156,7 @@ const IndexPage = props => {
         </article>
       </section>
       <SamplesCard />
+      <Divider />
       {postNodes && (
         <BlogPostPreviewGrid
           title="What is that girl talking about?"
@@ -163,6 +165,7 @@ const IndexPage = props => {
           browseMoreHref="/blog/"
         />
       )}
+      <Divider />
       <NewsletterForm />
     </Layout>
   )
