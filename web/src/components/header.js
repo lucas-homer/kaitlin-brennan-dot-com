@@ -114,7 +114,8 @@ const Header = ({ siteTitle }) => {
         </div>
         <Popover
           onClickOutside={() => setMenu(false)}
-          padding={10}
+          padding={16}
+          windowBorderPadding={24}
           isOpen={isMenuOpen}
           position={"bottom"} // preferred position
           content={({ position, targetRect, popoverRect }) => (
@@ -133,7 +134,7 @@ const Header = ({ siteTitle }) => {
                   boxShadow: "0 4 10 #CECECE",
                   backgroundColor: "secondary",
                   borderRadius: "primary",
-                  padding: 2,
+                  padding: 4,
                 }}
               >
                 <Link
