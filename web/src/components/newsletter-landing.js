@@ -40,6 +40,7 @@ export default function NewsletterLanding() {
         onSubmit={() => {}}
       >
         <input
+          aria-label="Email"
           type="email"
           name="email"
           placeholder="Email"

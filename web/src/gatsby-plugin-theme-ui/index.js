@@ -18,6 +18,7 @@ export default {
   },
   borders: {
     primary: "2px solid #DB2721",
+    secondary: "2px solid #69A1AC",
   },
   fonts: {
     body:

@@ -1,101 +1,228 @@
 /** @jsx jsx */
 import { Link } from "gatsby"
+import { useState } from "react"
 import PropTypes from "prop-types"
 import { jsx } from "theme-ui"
+import Popover, { ArrowContainer } from "react-tiny-popover"
 
-const Header = ({ siteTitle }) => (
-  <header
-    sx={{
-      // this uses the value from `theme.space[4]`
-      paddingTop: 4,
-      paddingBottom: 2,
-      paddingX: 4,
-      // these use values from `theme.colors`
-      backgroundColor: "backgroundGrey",
-      display: "flex",
-      alignItems: "baseline",
-      justifyContent: "space-between",
-    }}
-  >
-    <h1 style={{ margin: 0 }}>
-      <Link
-        to="/"
-        sx={{
-          textDecoration: `none`,
-          variant: "text.heading",
-          color: "text",
-        }}
-      >
-        {siteTitle}
-      </Link>
-    </h1>
-    <nav
+const Header = ({ siteTitle }) => {
+  const [isMenuOpen, setMenu] = useState(false)
+  return (
+    <header
       sx={{
+        // this uses the value from `theme.space[4]`
+        paddingTop: 4,
+        paddingBottom: 2,
+        paddingX: 4,
+        // these use values from `theme.colors`
+        backgroundColor: "backgroundGrey",
         display: "flex",
-        justifyContent: "space-between",
         alignItems: "baseline",
+        justifyContent: "space-between",
       }}
     >
-      <Link
+      <h2
         sx={{
-          color: "text",
-          padding: [0, 4],
-          textDecoration: `none`,
-          variant: "text.heading",
-          "&:hover": {
-            borderBottom: theme => `2px solid ${theme.colors.highlight}`,
-          },
+          margin: "0",
         }}
-        to="/blog"
       >
-        Blog
-      </Link>
-      <Link
+        <Link
+          to="/"
+          sx={{
+            textDecoration: `none`,
+            variant: "text.heading",
+            color: "text",
+          }}
+        >
+          {siteTitle}
+        </Link>
+      </h2>
+      <nav
         sx={{
-          color: "text",
-          padding: [0, 4],
-          textDecoration: `none`,
-          variant: "text.heading",
-          "&:hover": {
-            borderBottom: theme => `2px solid ${theme.colors.highlight}`,
-          },
+          display: "flex",
+          justifyContent: "flex-end",
+          alignItems: "baseline",
         }}
-        to="/samples"
       >
-        Samples
-      </Link>
+        <div
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "baseline",
+            "@media screen and (max-width: 950px)": {
+              display: "none",
+            },
+          }}
+        >
+          <Link
+            sx={{
+              color: "text",
+              padding: [0, 4],
+              textDecoration: `none`,
+              variant: "text.heading",
+              "&:hover": {
+                borderBottom: theme => `2px solid ${theme.colors.highlight}`,
+              },
+            }}
+            to="/blog"
+          >
+            Blog
+          </Link>
+          <Link
+            sx={{
+              color: "text",
+              padding: [0, 4],
+              textDecoration: `none`,
+              variant: "text.heading",
+              "&:hover": {
+                borderBottom: theme => `2px solid ${theme.colors.highlight}`,
+              },
+            }}
+            to="/samples"
+          >
+            Samples
+          </Link>
 
-      <Link
-        sx={{
-          color: "text",
-          padding: [0, 4],
-          textDecoration: `none`,
-          variant: "text.heading",
-          "&:hover": {
-            borderBottom: theme => `2px solid ${theme.colors.highlight}`,
-          },
-        }}
-        to="/about"
-      >
-        About
-      </Link>
-      <Link
-        sx={{
-          color: "text",
-          padding: [0, 4],
-          textDecoration: `none`,
-          variant: "text.heading",
-          "&:hover": {
-            borderBottom: theme => `2px solid ${theme.colors.highlight}`,
-          },
-        }}
-        to="/contact"
-      >
-        Contact
-      </Link>
-    </nav>
-  </header>
-)
+          <Link
+            sx={{
+              color: "text",
+              padding: [0, 4],
+              textDecoration: `none`,
+              variant: "text.heading",
+              "&:hover": {
+                borderBottom: theme => `2px solid ${theme.colors.highlight}`,
+              },
+            }}
+            to="/about"
+          >
+            About
+          </Link>
+          <Link
+            sx={{
+              color: "text",
+              padding: [0, 4],
+              textDecoration: `none`,
+              variant: "text.heading",
+              "&:hover": {
+                borderBottom: theme => `2px solid ${theme.colors.highlight}`,
+              },
+            }}
+            to="/contact"
+          >
+            Contact
+          </Link>
+        </div>
+        <Popover
+          onClickOutside={() => setMenu(false)}
+          padding={10}
+          isOpen={isMenuOpen}
+          position={"bottom"} // preferred position
+          content={({ position, targetRect, popoverRect }) => (
+            <ArrowContainer
+              position={position}
+              targetRect={targetRect}
+              popoverRect={popoverRect}
+              arrowColor={"#69A1AC"}
+              arrowSize={10}
+            >
+              <div
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  boxShadow: "0 4 10 #CECECE",
+                  backgroundColor: "secondary",
+                  borderRadius: "primary",
+                  padding: 2,
+                }}
+              >
+                <Link
+                  sx={{
+                    color: "white",
+                    padding: [2],
+                    textDecoration: `none`,
+                    variant: "text.heading",
+                    "&:hover": {
+                      borderBottom: theme =>
+                        `2px solid ${theme.colors.highlight}`,
+                    },
+                  }}
+                  to="/blog"
+                >
+                  Blog
+                </Link>
+                <Link
+                  sx={{
+                    color: "white",
+                    padding: [2],
+                    textDecoration: `none`,
+                    variant: "text.heading",
+                    "&:hover": {
+                      borderBottom: theme =>
+                        `2px solid ${theme.colors.highlight}`,
+                    },
+                  }}
+                  to="/samples"
+                >
+                  Samples
+                </Link>
+
+                <Link
+                  sx={{
+                    color: "white",
+                    padding: [2],
+                    textDecoration: `none`,
+                    variant: "text.heading",
+                    "&:hover": {
+                      borderBottom: theme =>
+                        `2px solid ${theme.colors.highlight}`,
+                    },
+                  }}
+                  to="/about"
+                >
+                  About
+                </Link>
+                <Link
+                  sx={{
+                    color: "white",
+                    padding: [2],
+                    textDecoration: `none`,
+                    variant: "text.heading",
+                    "&:hover": {
+                      borderBottom: theme =>
+                        `2px solid ${theme.colors.highlight}`,
+                    },
+                  }}
+                  to="/contact"
+                >
+                  Contact
+                </Link>
+              </div>
+            </ArrowContainer>
+          )}
+        >
+          <button
+            sx={{
+              "@media screen and (min-width: 951px)": {
+                display: "none",
+              },
+              border: "secondary",
+              borderRadius: "primary",
+              padding: "0 1rem",
+              color: isMenuOpen ? "white" : "secondary",
+              backgroundColor: isMenuOpen ? "secondary" : "white",
+              fontWeight: "bold",
+              opacity: isMenuOpen ? "0.5" : "1",
+            }}
+            onClick={() => setMenu(!isMenuOpen)}
+          >
+            Menu
+          </button>
+        </Popover>
+      </nav>
+    </header>
+  )
+}
 
 Header.propTypes = {
   siteTitle: PropTypes.string,

@@ -12,6 +12,7 @@ export default function Hero() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        padding: "0 1rem",
       }}
     >
       <HumaaanLanding
