@@ -3,7 +3,6 @@ import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 import LinkedIn from "./linkedin"
 import Twitter from "./twitter"
-import Facebook from "./facebook"
 
 export default function Footer() {
   return (
@@ -147,21 +146,6 @@ export default function Footer() {
             }}
           >
             <Twitter
-              sx={{
-                height: "24px",
-                width: "24px",
-              }}
-            />
-          </a>
-          <a
-            href="https://facebook.com/"
-            rel="noreferrer"
-            target="_blank"
-            sx={{
-              padding: 2,
-            }}
-          >
-            <Facebook
               sx={{
                 height: "24px",
                 width: "24px",
