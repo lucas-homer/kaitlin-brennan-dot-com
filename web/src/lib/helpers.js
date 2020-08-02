@@ -29,3 +29,9 @@ export function buildImageObj(source) {
 
   return imageObj
 }
+
+export function getPublishedDate(publishedAt) {
+  // Sanity gives us ISO strings, and format only takes Date | number
+  const parsedDate = Date.parse(publishedAt)
+  return format(parsedDate, "MMMM do, yyyy")
+}
