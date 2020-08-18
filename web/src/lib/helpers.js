@@ -35,3 +35,9 @@ export function getPublishedDate(publishedAt) {
   const parsedDate = Date.parse(publishedAt)
   return format(parsedDate, "MMMM do, yyyy")
 }
+
+export function encode(data) {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&")
+}
