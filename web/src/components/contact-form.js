@@ -2,12 +2,7 @@
 import React from "react"
 import { navigate } from "gatsby"
 import { Styled, jsx } from "theme-ui"
-
-function encode(data) {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&")
-}
+import { encode } from "../lib/helpers"
 
 export default function ContactForm() {
   const [state, setState] = React.useState({})
