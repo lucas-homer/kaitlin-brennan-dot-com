@@ -106,9 +106,15 @@ export default {
     },
   },
   inputs: {
-    primary: {
+    newsletter: {
       border: "none",
       borderRadius: "10px 0 0 10px",
+      bg: "white",
+      padding: 2,
+    },
+    primary: {
+      border: "none",
+      borderRadius: "10px",
       bg: "white",
       padding: 2,
     },
