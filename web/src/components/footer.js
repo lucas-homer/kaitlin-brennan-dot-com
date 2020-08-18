@@ -15,6 +15,7 @@ export default function Footer() {
     >
       <section
         sx={{
+          margin: "auto",
           maxWidth: "960px",
           display: "flex",
           justifyContent: "space-between",

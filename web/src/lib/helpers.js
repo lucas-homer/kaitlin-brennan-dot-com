@@ -1,4 +1,4 @@
-import { format } from "date-fns"
+import { format, parseISO } from "date-fns"
 
 export function cn(...args) {
   return args.filter(Boolean).join(" ")
@@ -15,8 +15,8 @@ export function filterOutDocsWithoutSlugs({ slug }) {
 
 export function getBlogUrl(publishedAt, slug) {
   // Sanity gives us ISO strings, and format only takes Date | number
-  const parsedDate = Date.parse(publishedAt)
-  return `/blog/${format(parsedDate, "yyyy/MM")}/${slug.current || slug}/`
+  const parsedDate = parseISO(publishedAt)
+  return `/blog/${format(parsedDate, "yyyy-MM-dd")}/${slug.current || slug}/`
 }
 
 export function buildImageObj(source) {
