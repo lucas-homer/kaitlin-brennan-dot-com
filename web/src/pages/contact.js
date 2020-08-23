@@ -5,12 +5,6 @@ import SEO from "../components/seo"
 import SittingHuman from "../components/sitting-human"
 import ContactForm from "../components/contact-form"
 
-function encode(data) {
-  return Object.keys(data)
-    .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
-    .join("&")
-}
-
 export default function ContactPage() {
   return (
     <div
