@@ -13,6 +13,8 @@ import mainImage from "./mainImage";
 import post from "./post";
 import author from "./author";
 import siteSettings from "./siteSettings";
+import workSample from "./workSample";
+import sampleType from "./workSampleType";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -31,6 +33,8 @@ export default createSchema({
     blockContent,
     blockText,
     mainImage,
-    siteSettings
+    siteSettings,
+    workSample,
+    sampleType
   ])
 });
