@@ -28,6 +28,13 @@ export const query = graphql`
         }
       }
     }
+    sampleTypes: allSanitySampleType {
+      edges {
+        node {
+          title
+        }
+      }
+    }
   }
 `
 
@@ -42,6 +49,10 @@ function SamplesPage({ data, errors }) {
 
   const workSampleNodes = (data || {}).workSamples
     ? mapEdgesToNodes(data.workSamples)
+    : []
+
+  const sampleTypes = (data || {}).sampleTypes
+    ? mapEdgesToNodes(data.sampleTypes)
     : []
 
   return (
@@ -96,7 +107,7 @@ function SamplesPage({ data, errors }) {
           </button>
         </section>
 
-        <WorkSamples nodes={workSampleNodes} />
+        <WorkSamples nodes={workSampleNodes} sampleTypes={sampleTypes} />
       </Layout>
     </div>
   )
