@@ -22,7 +22,7 @@ export default function WorkSampleCard({ sampleType, samples, colorKey }) {
       sx={{
         display: "flex",
         alignItems: "flex-start",
-        width: "250px",
+        width: "300px",
         margin: "0 2rem 2rem",
       }}
     >
@@ -45,6 +45,7 @@ export default function WorkSampleCard({ sampleType, samples, colorKey }) {
               sx={{
                 marginBottom: "0",
               }}
+              key={sample.id}
             >
               <a
                 href={sample.pdfUpload.asset.url}

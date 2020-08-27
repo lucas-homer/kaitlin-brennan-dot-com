@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
-import { graphql, Link } from "gatsby"
+import { jsx } from "theme-ui"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import GraphQLErrorList from "../components/graphql-error-list"
 import SEO from "../components/seo"

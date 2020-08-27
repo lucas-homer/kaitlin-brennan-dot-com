@@ -61,7 +61,7 @@ export default function WorkSamplesHuman(props) {
       <path
         d="M84.2346 127.729L97.3837 130.633C95.7382 124.857 94.0237 117.793 92.2889 109.638C89.7528 118.656 87.0435 124.743 84.2353 127.728L84.2346 127.729Z"
         fill="black"
-        fill-opacity="0.1"
+        fillOpacity="0.1"
       />
     </svg>
   )
