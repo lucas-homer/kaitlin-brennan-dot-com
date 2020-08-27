@@ -15,6 +15,7 @@ export default {
   },
   radii: {
     primary: "10px",
+    secondary: "25px",
   },
   borders: {
     primary: "2px solid #DB2721",

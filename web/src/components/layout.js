@@ -11,11 +11,10 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import Hero from "./hero"
 import Footer from "./footer"
 import "./layout.css"
 
-function Layout({ children, isHeroLayout = false }) {
+function Layout({ children, isHeroLayout = false, HeroComponent }) {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -29,7 +28,7 @@ function Layout({ children, isHeroLayout = false }) {
   return (
     <React.Fragment>
       <Header siteTitle={data.site.siteMetadata.title} />
-      {isHeroLayout && <Hero />}
+      {isHeroLayout && <HeroComponent />}
       <div
         style={{
           margin: `0 auto`,

@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import GraphQLErrorList from "../components/graphql-error-list"
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from "../lib/helpers"
 
+import Hero from "../components/hero"
 import Divider from "../components/divider"
 import SamplesCard from "../components/samples-landing"
 import NewsletterForm from "../components/newsletter-landing"
@@ -88,10 +89,8 @@ const IndexPage = props => {
     )
   }
 
-  console.log("postNodes", postNodes)
-
   return (
-    <Layout isHeroLayout={true}>
+    <Layout isHeroLayout={true} HeroComponent={Hero}>
       <SEO
         title={site.title}
         description={site.description}

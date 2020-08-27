@@ -6,7 +6,6 @@ import { imageUrlFor } from "../lib/image-url"
 import BlockText from "./block-text"
 
 export default function BlogPost(props) {
-  console.log(props)
   const { _rawBody, categories, title, mainImage, publishedAt } = props
   return (
     <article
