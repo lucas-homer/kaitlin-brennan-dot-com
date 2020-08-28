@@ -8,11 +8,12 @@ export default function WorkSamples({ workSamples, sampleTypes }) {
       sx={{
         bg: "white",
         paddingY: 8,
-        display: "flex",
+        display: "grid",
+        gridTemplateColumns:
+          "repeat(auto-fill, minmax(calc(400px - 1.5rem), 1fr))",
+        gap: "3rem",
         maxWidth: "800px",
-        flexWrap: "wrap",
         margin: "0 auto",
-        justifyContent: "space-evenly",
       }}
     >
       {sampleTypes?.map((type, index) => {

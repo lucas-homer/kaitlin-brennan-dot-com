@@ -8,7 +8,6 @@ export default function Dot(props) {
       fill={props.color}
       width={props.height}
       height={props.height}
-      fill="none"
     >
       <circle cx="50" cy="50" r="50" fill={props.color} />
     </svg>

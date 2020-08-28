@@ -22,8 +22,6 @@ export default function WorkSampleCard({ sampleType, samples, colorKey }) {
       sx={{
         display: "flex",
         alignItems: "flex-start",
-        width: "300px",
-        margin: "0 2rem 2rem",
       }}
     >
       <Dot height={32} color={color} />
