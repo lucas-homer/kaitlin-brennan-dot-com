@@ -17,6 +17,13 @@ const COLORS = [
 export default function WorkSampleCard({ sampleType, samples, colorKey }) {
   const color = COLORS[colorKey]
 
+  const getHref = ({ fileUpload, url }) => {
+    if (url) {
+      return url
+    }
+    return fileUpload.asset.url
+  }
+
   return (
     <div
       sx={{
@@ -46,7 +53,7 @@ export default function WorkSampleCard({ sampleType, samples, colorKey }) {
               key={sample.id}
             >
               <a
-                href={sample.pdfUpload.asset.url}
+                href={getHref(sample)}
                 rel="noreferrer"
                 target="_blank"
                 sx={{

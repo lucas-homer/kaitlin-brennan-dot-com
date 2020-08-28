@@ -18,7 +18,7 @@ export const query = graphql`
           sampleType {
             title
           }
-          pdfUpload {
+          fileUpload {
             asset {
               id
               title
@@ -26,6 +26,7 @@ export const query = graphql`
               url
             }
           }
+          url
         }
       }
     }
