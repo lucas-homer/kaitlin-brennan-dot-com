@@ -10,6 +10,9 @@ export default function BlogPostPreview(props) {
     <aside
       sx={{
         variant: "cards.blogPreview",
+        "&:hover": {
+          boxShadow: "primaryHover",
+        },
       }}
     >
       <Link

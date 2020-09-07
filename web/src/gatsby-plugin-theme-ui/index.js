@@ -14,6 +14,7 @@ export default {
   },
   shadows: {
     primary: "0px 4px 10px #CECECE",
+    primaryHover: "0px 4px 15px rgba(105, 161, 172, 0.44)",
   },
   radii: {
     primary: "10px",

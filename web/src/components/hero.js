@@ -39,19 +39,13 @@ export default function Hero() {
         >
           <Styled.h2
             sx={{
-              marginBottom: [0, 1],
+              marginBottom: [1],
               variant: "text.heading",
             }}
           >
             Content Creator
           </Styled.h2>
-          <Styled.h4
-            sx={{
-              fontWeight: "light",
-            }}
-          >
-            Clicks Queen
-          </Styled.h4>
+          <Styled.h4>Clicks Queen</Styled.h4>
         </aside>
         <button
           type="button"
