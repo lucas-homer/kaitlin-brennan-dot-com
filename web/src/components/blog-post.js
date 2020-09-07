@@ -29,11 +29,24 @@ export default function BlogPost(props) {
       )}
       {_rawBody && <BlockText blocks={_rawBody} />}
       {categories?.length ? (
-        <aside>
-          <Styled.h4>Categories</Styled.h4>
-          <ul>
+        <aside
+          sx={{
+            // padding: [4],
+            marginTop: [7],
+          }}
+        >
+          <Styled.h5>Categories</Styled.h5>
+          <ul
+            sx={{
+              listStyle: "none",
+              display: "flex",
+              flexFlow: "row wrap",
+            }}
+          >
             {categories.map(category => (
-              <li key={category._id}>{category.title}</li>
+              <li sx={{ paddingX: [4], paddingY: [0] }} key={category._id}>
+                {category.title}
+              </li>
             ))}
           </ul>
         </aside>

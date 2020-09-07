@@ -107,7 +107,7 @@ export default {
       display: "flex",
       flexDirection: "column",
       justifyContent: "left",
-      padding: 3,
+      padding: [3, 6],
       boxShadow: "primary",
     },
   },
