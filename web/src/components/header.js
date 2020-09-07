@@ -23,7 +23,7 @@ const Header = ({ siteTitle }) => {
     >
       <h2
         sx={{
-          margin: "0",
+          paddingX: [0, 4],
         }}
       >
         <Link

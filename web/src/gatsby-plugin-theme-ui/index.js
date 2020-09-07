@@ -22,7 +22,7 @@ export default {
   },
   borders: {
     primary: "2px solid #DB2721",
-    secondary: "2px solid #69A1AC",
+    secondary: "2px solid #89C5CC",
   },
   fonts: {
     body: "Ubuntu, Open Sans, Segoe UI, sans-serif",
