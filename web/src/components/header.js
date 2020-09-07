@@ -32,6 +32,7 @@ const Header = ({ siteTitle }) => {
             textDecoration: `none`,
             variant: "text.heading",
             color: "text",
+            fontWeight: "heavy",
           }}
         >
           {siteTitle}
@@ -56,12 +57,11 @@ const Header = ({ siteTitle }) => {
         >
           <Link
             sx={{
-              color: "text",
+              color: "testText",
               padding: [0, 4],
               textDecoration: `none`,
-              variant: "text.heading",
               "&:hover": {
-                borderBottom: theme => `2px solid ${theme.colors.highlight}`,
+                color: "secondary",
               },
             }}
             to="/blog"
@@ -70,12 +70,11 @@ const Header = ({ siteTitle }) => {
           </Link>
           <Link
             sx={{
-              color: "text",
+              color: "testText",
               padding: [0, 4],
               textDecoration: `none`,
-              variant: "text.heading",
               "&:hover": {
-                borderBottom: theme => `2px solid ${theme.colors.highlight}`,
+                color: "secondary",
               },
             }}
             to="/samples"
@@ -85,12 +84,11 @@ const Header = ({ siteTitle }) => {
 
           <Link
             sx={{
-              color: "text",
+              color: "testText",
               padding: [0, 4],
               textDecoration: `none`,
-              variant: "text.heading",
               "&:hover": {
-                borderBottom: theme => `2px solid ${theme.colors.highlight}`,
+                color: "secondary",
               },
             }}
             to="/about"
@@ -99,12 +97,11 @@ const Header = ({ siteTitle }) => {
           </Link>
           <Link
             sx={{
-              color: "text",
+              color: "testText",
               padding: [0, 4],
               textDecoration: `none`,
-              variant: "text.heading",
               "&:hover": {
-                borderBottom: theme => `2px solid ${theme.colors.highlight}`,
+                color: "secondary",
               },
             }}
             to="/contact"
@@ -142,11 +139,6 @@ const Header = ({ siteTitle }) => {
                     color: "white",
                     padding: [2],
                     textDecoration: `none`,
-                    variant: "text.heading",
-                    "&:hover": {
-                      borderBottom: theme =>
-                        `2px solid ${theme.colors.highlight}`,
-                    },
                   }}
                   to="/blog"
                 >
@@ -157,11 +149,6 @@ const Header = ({ siteTitle }) => {
                     color: "white",
                     padding: [2],
                     textDecoration: `none`,
-                    variant: "text.heading",
-                    "&:hover": {
-                      borderBottom: theme =>
-                        `2px solid ${theme.colors.highlight}`,
-                    },
                   }}
                   to="/samples"
                 >
@@ -173,11 +160,6 @@ const Header = ({ siteTitle }) => {
                     color: "white",
                     padding: [2],
                     textDecoration: `none`,
-                    variant: "text.heading",
-                    "&:hover": {
-                      borderBottom: theme =>
-                        `2px solid ${theme.colors.highlight}`,
-                    },
                   }}
                   to="/about"
                 >
@@ -188,11 +170,6 @@ const Header = ({ siteTitle }) => {
                     color: "white",
                     padding: [2],
                     textDecoration: `none`,
-                    variant: "text.heading",
-                    "&:hover": {
-                      borderBottom: theme =>
-                        `2px solid ${theme.colors.highlight}`,
-                    },
                   }}
                   to="/contact"
                 >

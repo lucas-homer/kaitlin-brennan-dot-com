@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import React from "react"
 import { encode } from "../lib/helpers"
 
@@ -45,7 +45,7 @@ export default function NewsletterLanding() {
           margin: "0 auto",
         }}
       >
-        <h2
+        <Styled.h3
           sx={{
             marginBottom: "0px",
           }}
@@ -54,8 +54,8 @@ export default function NewsletterLanding() {
           <span role="img" aria-label="painting fingernails">
             💅
           </span>
-        </h2>
-        <h4>Homemade thoughts to your inbox!</h4>
+        </Styled.h3>
+        <Styled.h5>Homemade thoughts to your inbox</Styled.h5>
         {showSuccessEmoji ? (
           <h4
             sx={{

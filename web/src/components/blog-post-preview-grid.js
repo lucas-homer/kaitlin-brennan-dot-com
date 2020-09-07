@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
 import BlogPostPreview from "./blog-post-preview"
 
@@ -23,20 +23,23 @@ function BlogPostPreviewGrid(props) {
           textAlign: "center",
         }}
       >
-        <h2
+        <Styled.h3
           sx={{
             variant: "text.heading",
           }}
         >
           {props.title}
-        </h2>
-        <h4
+        </Styled.h3>
+        <Styled.h5
           sx={{
             variant: "text.heading",
+            fontFamily: "body",
+            fontWeight: "body",
+            textDecoration: "underline rgba(255, 65, 51, 1)",
           }}
         >
-          {props.subtitle}
-        </h4>
+          <em>{props.subtitle}</em>
+        </Styled.h5>
       </Link>
 
       <ul
@@ -54,21 +57,26 @@ function BlogPostPreviewGrid(props) {
           ))}
       </ul>
       {props.browseMoreHref && (
-        <h4
+        <Styled.h5
           sx={{
             margin: "0 0 0 auto",
+            fontFamily: "body",
+            fontWeight: "body",
           }}
         >
           <Link
             to={props.browseMoreHref}
-            sx={{ color: "text", textDecoration: `none` }}
+            sx={{
+              color: "text",
+              textDecoration: "underline rgba(255, 65, 51, 1)",
+            }}
           >
-            Browse more{" "}
+            <em>Browse more </em>
             <span aria-label="right arrow" role="img">
               ➡️
             </span>
           </Link>
-        </h4>
+        </Styled.h5>
       )}
     </section>
   )

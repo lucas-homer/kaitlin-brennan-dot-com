@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import Dot from "./dot"
 
 const COLORS = [
@@ -37,7 +37,7 @@ export default function WorkSampleCard({ sampleType, samples, colorKey }) {
           padding: 2,
         }}
       >
-        <h4>{sampleType}</h4>
+        <Styled.h5>{sampleType}</Styled.h5>
         <ul
           sx={{
             listStyle: "none",

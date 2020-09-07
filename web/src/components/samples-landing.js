@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
 
 export default function SamplesLanding() {
@@ -14,7 +14,7 @@ export default function SamplesLanding() {
         margin: "2rem auto",
       }}
     >
-      <h2
+      <Styled.h3
         sx={{
           textAlign: "center",
         }}
@@ -26,17 +26,25 @@ export default function SamplesLanding() {
         <span aria-label="boom" role="img">
           💥
         </span>
-      </h2>
-      <h5
+      </Styled.h3>
+      <Styled.h5
         sx={{
           textAlign: "center",
+          fontFamily: "body",
+          fontWeight: "body",
         }}
       >
         <span aria-label="line graph showing growth" role="img">
           📈
         </span>{" "}
-        I am a pro at growth marketing.
-      </h5>
+        <em
+          sx={{
+            textDecoration: "underline rgba(255, 65, 51, 1)",
+          }}
+        >
+          I am a pro at growth marketing.
+        </em>
+      </Styled.h5>
       <ul
         sx={{
           listStyleType: "none",

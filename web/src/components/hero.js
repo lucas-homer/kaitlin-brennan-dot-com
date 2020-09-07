@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
 import HumaaanLanding from "./humaaan-landing"
 
@@ -19,6 +19,7 @@ export default function Hero() {
         sx={{
           maxWidth: "300px",
           minWidth: "150px",
+          margin: "0 10px",
         }}
       />
       <article
@@ -36,14 +37,21 @@ export default function Hero() {
             marginRight: [2, 3, 4],
           }}
         >
-          <h1
+          <Styled.h2
             sx={{
-              marginBottom: "0px",
+              marginBottom: [0, 1],
+              variant: "text.heading",
             }}
           >
             Content Creator
-          </h1>
-          <h2>Clicks queen</h2>
+          </Styled.h2>
+          <Styled.h4
+            sx={{
+              fontWeight: "light",
+            }}
+          >
+            Clicks Queen
+          </Styled.h4>
         </aside>
         <button
           type="button"

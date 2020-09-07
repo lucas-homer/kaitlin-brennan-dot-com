@@ -26,10 +26,15 @@ export default function SamplesHero() {
         }}
       >
         <Styled.h3>Work Samples</Styled.h3>
-        <Styled.h6>
+        <Styled.h5
+          sx={{
+            fontWeight: "body",
+            fontFamily: "body",
+          }}
+        >
           Interested in more samples, references, or want to chat about a
           potential project?
-        </Styled.h6>
+        </Styled.h5>
         <button
           sx={{
             variant: "buttons.primary",

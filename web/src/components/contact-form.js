@@ -29,7 +29,9 @@ export default function ContactForm() {
   return (
     <aside>
       <Styled.h2>Let's Connect</Styled.h2>
-      <Styled.h5>Beverages. Exchange ideas. Sparks!</Styled.h5>
+      <Styled.h5 sx={{ fontWeight: "body" }}>
+        Beverages. Exchange ideas. Sparks!
+      </Styled.h5>
       <form
         name="contact"
         method="post"

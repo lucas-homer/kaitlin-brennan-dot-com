@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import { Fragment } from "react"
 import { buildImageObj, getPublishedDate } from "../lib/helpers"
 import { imageUrlFor } from "../lib/image-url"
@@ -13,7 +13,7 @@ export default function BlogPost(props) {
         variant: "cards.blogPost",
       }}
     >
-      <h1>{title}</h1>
+      <Styled.h3>{title}</Styled.h3>
       {publishedAt && <div>{getPublishedDate(publishedAt)}</div>}
       {mainImage && mainImage.asset && (
         <Fragment>
@@ -30,7 +30,7 @@ export default function BlogPost(props) {
       {_rawBody && <BlockText blocks={_rawBody} />}
       {categories?.length ? (
         <aside>
-          <h3>Categories</h3>
+          <Styled.h4>Categories</Styled.h4>
           <ul>
             {categories.map(category => (
               <li key={category._id}>{category.title}</li>
