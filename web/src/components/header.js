@@ -23,7 +23,7 @@ const Header = ({ siteTitle }) => {
     >
       <h2
         sx={{
-          paddingX: [0, 4],
+          paddingX: [0, 0, 4],
         }}
       >
         <Link
@@ -191,6 +191,9 @@ const Header = ({ siteTitle }) => {
               backgroundColor: isMenuOpen ? "secondary" : "white",
               fontWeight: "bold",
               opacity: isMenuOpen ? "0.5" : "1",
+              "&:hover": {
+                cursor: "pointer",
+              },
             }}
             onClick={() => setMenu(!isMenuOpen)}
           >
