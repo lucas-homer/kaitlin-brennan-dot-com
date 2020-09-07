@@ -1,8 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { Link } from "gatsby"
-import { buildImageObj, getBlogUrl } from "../lib/helpers"
-import { imageUrlFor } from "../lib/image-url"
+import { getBlogUrl } from "../lib/helpers"
 import BlockText from "./block-text"
 
 export default function BlogPostPreview(props) {
@@ -29,17 +28,6 @@ export default function BlogPostPreview(props) {
         >
           {props.title}
         </h4>
-        <div>
-          {props.mainImage && props.mainImage.asset && (
-            <img
-              src={imageUrlFor(buildImageObj(props.mainImage))
-                .width(600)
-                .height(Math.floor((9 / 16) * 600))
-                .url()}
-              alt={props.mainImage.alt}
-            />
-          )}
-        </div>
         {props._rawExcerpt && (
           <blockquote
             sx={{

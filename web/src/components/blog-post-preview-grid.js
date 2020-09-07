@@ -42,26 +42,28 @@ function BlogPostPreviewGrid(props) {
         </Styled.h5>
       </Link>
 
-      <ul
+      <div
         sx={{
-          listStyleType: "none",
-          display: "flex",
-          flexWrap: "wrap",
+          display: "grid",
+          gridTemplateColumns:
+            "repeat(auto-fill, minmax(calc(300px - 1.5rem), 1fr))",
+          gap: "3rem",
         }}
       >
         {props.nodes &&
           props.nodes.map(node => (
-            <li key={node.id}>
+            <div key={node.id}>
               <BlogPostPreview {...node} />
-            </li>
+            </div>
           ))}
-      </ul>
+      </div>
       {props.browseMoreHref && (
         <Styled.h5
           sx={{
             margin: "0 0 0 auto",
             fontFamily: "body",
             fontWeight: "body",
+            paddingY: "2rem",
           }}
         >
           <Link

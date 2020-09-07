@@ -43,7 +43,7 @@ export default {
   },
   sizes: {
     landingCardContainer: 600,
-    blogPreviewCard: 250,
+    blogPreviewCard: 500,
     blogListCard: 600,
     blogPost: 800,
   },
@@ -79,7 +79,7 @@ export default {
   cards: {
     blogPreview: {
       bg: "backgroundGrey",
-      maxWidth: "blogPreviewCard",
+      // maxWidth: "blogPreviewCard",
       borderRadius: "primary",
       display: "flex",
       flexDirection: "column",
@@ -95,7 +95,7 @@ export default {
       display: "flex",
       flexDirection: "column",
       justifyContent: "left",
-      padding: 3,
+      padding: [3, 6],
       boxShadow: "primary",
     },
     blogPost: {

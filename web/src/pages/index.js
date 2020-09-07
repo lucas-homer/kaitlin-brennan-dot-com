@@ -26,7 +26,7 @@ export const query = graphql`
     }
 
     posts: allSanityPost(
-      limit: 3
+      limit: 4
       sort: { fields: [publishedAt], order: DESC }
     ) {
       edges {
