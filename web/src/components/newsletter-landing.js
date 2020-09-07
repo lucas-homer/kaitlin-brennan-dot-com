@@ -47,7 +47,7 @@ export default function NewsletterLanding() {
       >
         <Styled.h3
           sx={{
-            marginBottom: "0px",
+            marginBottom: ".5rem",
           }}
         >
           I offer delivery{" "}
