@@ -1,4 +1,6 @@
 /** @jsx jsx */
+import { Link } from "gatsby"
+import kebabCase from "lodash/kebabCase"
 import { jsx, Styled } from "theme-ui"
 import { Fragment } from "react"
 import { buildImageObj, getPublishedDate } from "../lib/helpers"
@@ -45,7 +47,18 @@ export default function BlogPost(props) {
           >
             {categories.map(category => (
               <li sx={{ paddingX: [4], paddingY: [0] }} key={category._id}>
-                {category.title}
+                <Link
+                  to={`/categories/${kebabCase(category.title)}`}
+                  sx={{
+                    textDecoration: "none",
+                    color: "white",
+                    backgroundColor: "secondary",
+                    borderRadius: "primary",
+                    padding: 2,
+                  }}
+                >
+                  {category.title}
+                </Link>
               </li>
             ))}
           </ul>

@@ -5,6 +5,7 @@
  */
 
 const { format, parseISO } = require("date-fns")
+const _ = require("lodash")
 
 async function createBlogPostPages(graphql, actions, reporter) {
   const { createPage } = actions
@@ -19,6 +20,12 @@ async function createBlogPostPages(graphql, actions, reporter) {
               current
             }
           }
+        }
+      }
+      categoriesGroup: allSanityPost {
+        group(field: categories___title) {
+          fieldValue
+          totalCount
         }
       }
     }
@@ -40,6 +47,23 @@ async function createBlogPostPages(graphql, actions, reporter) {
       path,
       component: require.resolve("./src/templates/blog-post.js"),
       context: { id },
+    })
+  })
+
+  const categories = result.data.categoriesGroup.group || []
+
+  categories.forEach(category => {
+    const path = `/categories/${_.kebabCase(category.fieldValue)}/`
+
+    reporter.info(`Creating blog post page: ${path}`)
+
+    createPage({
+      path,
+      component: require.resolve("./src/templates/categories.js"),
+      context: {
+        categoryName: category.fieldValue,
+        totalCount: category.totalCount,
+      },
     })
   })
 }
