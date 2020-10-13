@@ -46,6 +46,7 @@ export default {
     blogPreviewCard: 500,
     blogListCard: 600,
     blogPost: 800,
+    serviceCard: ["150px", "300px"],
   },
   fontSizes: [12, 14, 16, 18, 20, 24, 30, 36, 48, 60, 72],
   space: [0, 4, 8, 12, 16, 24, 32, 48, 64, 96, 128, 256, 512],
