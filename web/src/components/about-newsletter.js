@@ -36,7 +36,8 @@ export default function AboutNewsletter() {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        padding: [4, 6],
+        paddingX: [4, 6, 6],
+        paddingY: [6],
         maxWidth: "landingCardContainer",
         margin: ["16px", "32px auto"],
         filter: "drop-shadow(8px 8px 8px #CECECE)",
@@ -69,6 +70,7 @@ export default function AboutNewsletter() {
         onSubmit={handleSubmit}
         sx={{
           paddingX: [4, 6, 9],
+          marginBottom: "0",
         }}
       >
         {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
