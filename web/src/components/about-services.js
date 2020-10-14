@@ -16,7 +16,7 @@ export default function AboutServices() {
       <div
         sx={{
           textAlign: "center",
-          marginBottom: [4, 8],
+          marginBottom: [3],
         }}
       >
         <Styled.h3>Services</Styled.h3>

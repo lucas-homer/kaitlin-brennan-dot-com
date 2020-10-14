@@ -31,7 +31,7 @@ export default function WorkSampleCard({ sampleType, samples, colorKey }) {
         alignItems: "flex-start",
       }}
     >
-      <Dot height={32} color={color} />
+      <Dot color={color} />
       <div
         sx={{
           padding: 2,
