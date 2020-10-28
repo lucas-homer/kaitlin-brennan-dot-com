@@ -73,8 +73,10 @@ export default {
       border: "primary",
       borderRadius: "primary",
       whiteSpace: "nowrap",
-      "&:hover": {
+      transition: "filter 400ms",
+      "&:not(:disabled):hover": {
         cursor: "pointer",
+        filter: "contrast(175%) drop-shadow(0px 5px 10px #f2f2f2)",
       },
     },
   },
