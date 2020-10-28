@@ -15,6 +15,7 @@ import author from "./author";
 import siteSettings from "./siteSettings";
 import workSample from "./workSample";
 import sampleType from "./workSampleType";
+import service from "./service";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -35,6 +36,7 @@ export default createSchema({
     mainImage,
     siteSettings,
     workSample,
-    sampleType
+    sampleType,
+    service
   ])
 });
