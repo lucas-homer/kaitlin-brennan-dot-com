@@ -11,6 +11,7 @@ export default {
     highlight: "#FF4133",
     secondaryLight: "#89C5CC",
     muted: "#828282",
+    purp: "#925CAB",
   },
   shadows: {
     primary: "0px 4px 10px #CECECE",
@@ -80,14 +81,13 @@ export default {
   cards: {
     blogPreview: {
       bg: "backgroundGrey",
-      // maxWidth: "blogPreviewCard",
       borderRadius: "primary",
       display: "flex",
       flexDirection: "column",
       justifyContent: "left",
       padding: 3,
       margin: 2,
-      boxShadow: "primary",
+      filter: "drop-shadow(16px 16px 20px #F2F2F2)",
     },
     blogListCard: {
       bg: "white",
@@ -97,7 +97,7 @@ export default {
       flexDirection: "column",
       justifyContent: "left",
       padding: [3, 6],
-      boxShadow: "primary",
+      filter: "drop-shadow(16px 16px 20px #CECECE)",
     },
     blogPost: {
       bg: "white",
@@ -109,7 +109,7 @@ export default {
       flexDirection: "column",
       justifyContent: "left",
       padding: [3, 6],
-      boxShadow: "primary",
+      filter: "drop-shadow(16px 16px 20px #CECECE)",
     },
   },
   inputs: {

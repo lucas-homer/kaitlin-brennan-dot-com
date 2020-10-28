@@ -38,6 +38,7 @@ export default function NewsletterLanding() {
         padding: 4,
         maxWidth: "landingCardContainer",
         margin: "2rem auto",
+        filter: "drop-shadow(16px 16px 20px #cecece)",
       }}
     >
       <div

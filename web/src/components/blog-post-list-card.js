@@ -10,9 +10,6 @@ export default function BlogPostListCard(props) {
     <aside
       sx={{
         variant: "cards.blogListCard",
-        "&:hover": {
-          boxShadow: "primaryHover",
-        },
       }}
     >
       <Link

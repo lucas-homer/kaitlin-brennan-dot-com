@@ -9,8 +9,9 @@ export default function BlogPostPreview(props) {
     <aside
       sx={{
         variant: "cards.blogPreview",
-        "&:hover": {
-          boxShadow: "primaryHover",
+        transition: "filter 400ms",
+        "&:not(:disabled):hover": {
+          filter: "contrast(102%) drop-shadow(16px 16px 20px #CECECE)",
         },
       }}
     >
