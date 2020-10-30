@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
 
-export default function AboutServices() {
+export default function AboutServices({ services }) {
   return (
     <section
       sx={{
@@ -33,15 +33,19 @@ export default function AboutServices() {
           flexWrap: "wrap",
         }}
       >
-        <ServiceCard />
-        <ServiceCard />
-        <ServiceCard />
+        {services.map(service => (
+          <ServiceCard
+            key={service.id}
+            title={service.title}
+            description={service.description}
+          />
+        ))}
       </div>
     </section>
   )
 }
 
-function ServiceCard() {
+function ServiceCard({ title, description }) {
   return (
     <div
       sx={{
@@ -51,12 +55,11 @@ function ServiceCard() {
         padding: [7],
         margin: [4, 8],
         filter: "drop-shadow(16px 16px 20px #CECECE)",
+        textAlign: "center",
       }}
     >
-      <Styled.h4>Consulting</Styled.h4>
-      <Styled.p>
-        Some text here saying how KB will smash the tasks you have for her.
-      </Styled.p>
+      <Styled.h4>{title}</Styled.h4>
+      <Styled.p>{description}</Styled.p>
     </div>
   )
 }
