@@ -1,8 +1,8 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
-import Dot from "./dot"
+import Skillset from "./skillset"
 
-export default function AboutBackground() {
+export default function AboutBackground({ skillsets }) {
   return (
     <section
       sx={{
@@ -24,90 +24,14 @@ export default function AboutBackground() {
       <div
         sx={{
           display: "grid",
-          gridTemplateColumns: "auto 50px minmax(150px, 400px) auto",
-          gridTemplateRows: "1fr 1fr 1fr", // TODO -- use repeat() and look at the length of list of `background` items
+          gridTemplateColumns: "auto minmax(150px, 400px) auto",
+          gridTemplateRows: `repeat(${skillsets}, 1fr)`,
           padding: [3],
         }}
       >
-        {/* TODO -- create sanity schema for these content items */}
-        <div
-          sx={{
-            gridColumnStart: "2",
-            gridColumnEnd: "3",
-            gridRowStart: "auto",
-            gridRowEnd: "auto",
-          }}
-        >
-          <Dot color="#5C63AB" />
-        </div>
-        <div
-          sx={{
-            gridColumnStart: "3",
-            gridColumnEnd: "4",
-            gridRowStart: "auto",
-            gridRowEnd: "auto",
-          }}
-        >
-          <Styled.h5 sx={{ marginTop: [2] }}>Key Skillset</Styled.h5>
-          <Styled.p>
-            Molestie a iaculis at erat. Sagittis vitae et leo duis ut diam quam
-            nulla porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua.{" "}
-          </Styled.p>
-        </div>
-        <div
-          sx={{
-            gridColumnStart: "2",
-            gridColumnEnd: "3",
-            gridRowStart: "auto",
-            gridRowEnd: "auto",
-          }}
-        >
-          <Dot color="#FF4133" />
-        </div>
-        <div
-          sx={{
-            gridColumnStart: "3",
-            gridColumnEnd: "4",
-            gridRowStart: "auto",
-            gridRowEnd: "auto",
-          }}
-        >
-          <Styled.h5 sx={{ marginTop: [2] }}>Key Skillset</Styled.h5>
-          <Styled.p>
-            Molestie a iaculis at erat. Sagittis vitae et leo duis ut diam quam
-            nulla porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua.{" "}
-          </Styled.p>
-        </div>
-        <div
-          sx={{
-            gridColumnStart: "2",
-            gridColumnEnd: "3",
-            gridRowStart: "auto",
-            gridRowEnd: "auto",
-          }}
-        >
-          <Dot color="#69A1AC" />
-        </div>
-        <div
-          sx={{
-            gridColumnStart: "3",
-            gridColumnEnd: "4",
-            gridRowStart: "auto",
-            gridRowEnd: "auto",
-          }}
-        >
-          <Styled.h5 sx={{ marginTop: [2] }}>Key Skillset</Styled.h5>
-          <Styled.p>
-            Molestie a iaculis at erat. Sagittis vitae et leo duis ut diam quam
-            nulla porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing
-            elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-            aliqua.{" "}
-          </Styled.p>
-        </div>
+        {skillsets.map((skillset, index) => (
+          <Skillset skillset={skillset} key={skillset.id} index={index} />
+        ))}
       </div>
     </section>
   )
