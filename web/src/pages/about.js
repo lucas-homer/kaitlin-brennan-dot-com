@@ -33,11 +33,6 @@ export const query = graphql`
         }
       }
     }
-    site {
-      siteMetadata {
-        title
-      }
-    }
   }
 `
 
@@ -58,12 +53,10 @@ function AboutPage({ data, errors }) {
     ? mapEdgesToNodes(data.skillsets)
     : []
 
-  const siteData = (data || {}).siteData
-
   return (
     <React.Fragment>
       <SEO title="About" />
-      <Header siteTitle={siteData?.site.siteMetadata.title} />
+      <Header />
       <AboutHero />
       <AboutServices services={serviceNodes} />
       <AboutBackground skillsets={skillsetNodes} />

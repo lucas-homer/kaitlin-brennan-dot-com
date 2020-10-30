@@ -5,7 +5,7 @@ import PropTypes from "prop-types"
 import { jsx } from "theme-ui"
 import Popover, { ArrowContainer } from "react-tiny-popover"
 
-const Header = ({ siteTitle }) => {
+const Header = () => {
   const [isMenuOpen, setMenu] = useState(false)
   return (
     <header
@@ -35,7 +35,7 @@ const Header = ({ siteTitle }) => {
             fontWeight: "heavy",
           }}
         >
-          {siteTitle}
+          Kaitlin Brennan
         </Link>
       </h2>
       <nav
