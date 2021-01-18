@@ -84,6 +84,8 @@ const BlogPostTemplate = props => {
     )
   }
 
+  const { mainImage } = post
+
   return (
     <div
       sx={{
@@ -91,7 +93,7 @@ const BlogPostTemplate = props => {
       }}
     >
       <Layout>
-        {post && <SEO title={post.title || "Untitled"} />}
+        {post && <SEO title={post.title || "Untitled"} mainImage={mainImage} />}
         {post && <BlogPost {...post} />}
       </Layout>
     </div>
