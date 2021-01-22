@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -17,21 +17,51 @@ export default function Thanks() {
           sx={{
             display: "flex",
             flexDirection: "column",
-            alignItems: "center",
             justifyContent: "center",
-            padding: "3rem",
+            padding: 4,
+            maxWidth: "landingCardContainer",
+            margin: "2rem auto",
           }}
         >
-          <h3>thanks! can't wait to chat.</h3>
-          <Link to="/">
-            <button
+          <Styled.h3
+            sx={{
+              textAlign: "center",
+            }}
+          >
+            <span aria-label="boom" role="img">
+              💥
+            </span>{" "}
+            Thank you so much!{" "}
+            <span aria-label="boom" role="img">
+              💥
+            </span>
+          </Styled.h3>
+          <Styled.h5
+            sx={{
+              textAlign: "center",
+              fontFamily: "body",
+              fontWeight: "body",
+            }}
+          >
+            I can't wait to connect!
+          </Styled.h5>
+          <button
+            sx={{
+              variant: "buttons.secondary",
+              maxWidth: "200px",
+              margin: "0 auto",
+            }}
+          >
+            <Link
+              to="/"
               sx={{
-                variant: "buttons.secondary",
+                textDecoration: `none`,
+                color: "primary",
               }}
             >
-              Back to homepage
-            </button>
-          </Link>
+              Back to Home page
+            </Link>
+          </button>
         </section>
       </Layout>
     </div>
