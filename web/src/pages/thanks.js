@@ -20,7 +20,7 @@ export default function Thanks() {
             justifyContent: "center",
             padding: 4,
             maxWidth: "landingCardContainer",
-            margin: "2rem auto",
+            margin: "4rem auto 0",
           }}
         >
           <Styled.h3
