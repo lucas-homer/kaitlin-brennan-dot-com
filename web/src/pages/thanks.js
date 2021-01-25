@@ -3,14 +3,16 @@ import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import PrayingEmoji from "../components/praying-emoji"
+import PottedPlant from "../components/potted-plant"
 
 export default function Thanks() {
   return (
     <div
-      sx={{
-        bg: "backgroundGrey",
-      }}
+      sx={
+        {
+          // bg: "backgroundGrey",
+        }
+      }
     >
       <Layout>
         <SEO title="thanks" />
@@ -19,19 +21,23 @@ export default function Thanks() {
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
+            alignItems: "center",
             padding: 4,
             maxWidth: "landingCardContainer",
             margin: "4rem auto 0",
           }}
         >
-          <PrayingEmoji />
-          <Styled.h3
+          <div sx={{ paddingRight: [7], paddingLeft: [8], paddingBottom: [7] }}>
+            <PottedPlant />
+          </div>
+          <Styled.h4
             sx={{
               textAlign: "center",
+              marginBottom: [1],
             }}
           >
             Thank you so much!{" "}
-          </Styled.h3>
+          </Styled.h4>
           <Styled.h5
             sx={{
               textAlign: "center",
@@ -39,13 +45,19 @@ export default function Thanks() {
               fontWeight: "body",
             }}
           >
-            I can't wait to connect!
+            <span role="img" aria-label="praying hands">
+              🙏
+            </span>{" "}
+            I can't wait to connect{" "}
+            <span role="img" aria-label="praying hands">
+              🙏
+            </span>{" "}
           </Styled.h5>
           <button
             sx={{
               variant: "buttons.secondary",
               maxWidth: "200px",
-              margin: "0 auto",
+              margin: "12px auto ",
             }}
           >
             <Link
