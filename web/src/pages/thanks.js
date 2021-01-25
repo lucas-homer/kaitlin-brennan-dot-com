@@ -3,6 +3,7 @@ import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import PrayingEmoji from "../components/praying-emoji"
 
 export default function Thanks() {
   return (
@@ -23,18 +24,13 @@ export default function Thanks() {
             margin: "4rem auto 0",
           }}
         >
+          <PrayingEmoji />
           <Styled.h3
             sx={{
               textAlign: "center",
             }}
           >
-            <span aria-label="boom" role="img">
-              💥
-            </span>{" "}
             Thank you so much!{" "}
-            <span aria-label="boom" role="img">
-              💥
-            </span>
           </Styled.h3>
           <Styled.h5
             sx={{
