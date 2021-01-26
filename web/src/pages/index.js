@@ -21,6 +21,28 @@ export const query = graphql`
           author
           description
           title
+          ogImage {
+            crop {
+              _key
+              _type
+              top
+              bottom
+              left
+              right
+            }
+            hotspot {
+              _key
+              _type
+              x
+              y
+              height
+              width
+            }
+            asset {
+              _id
+            }
+            alt
+          }
         }
       }
     }
@@ -77,7 +99,7 @@ const IndexPage = props => {
     )
   }
 
-  const site = (data || {}).site ? mapEdgesToNodes(data.site) : []
+  const [site] = (data || {}).site ? mapEdgesToNodes(data.site) : []
 
   const postNodes = (data || {}).posts
     ? mapEdgesToNodes(data.posts).filter(filterOutDocsWithoutSlugs)
@@ -95,6 +117,7 @@ const IndexPage = props => {
         title={site.title}
         description={site.description}
         keywords={site.keywords}
+        mainImage={site.ogImage}
       />
       <SamplesCard />
       <Divider />
