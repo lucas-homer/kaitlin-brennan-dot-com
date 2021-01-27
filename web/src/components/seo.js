@@ -9,8 +9,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { buildImageObj } from "../lib/helpers"
+import { imageUrlFor } from "../lib/image-url"
 
-function SEO({ description, lang, meta, title }) {
+function SEO({ description, lang, meta, title, mainImage }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -26,6 +28,14 @@ function SEO({ description, lang, meta, title }) {
   )
 
   const metaDescription = description || site.siteMetadata.description
+
+  const imageUrl = mainImage?.asset
+    ? imageUrlFor(buildImageObj(mainImage))
+        .width(1200)
+        .height(Math.floor((9 / 16) * 1200))
+        .fit("crop")
+        .url()
+    : ""
 
   return (
     <Helmet
@@ -50,6 +60,10 @@ function SEO({ description, lang, meta, title }) {
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:image`,
+          content: imageUrl,
         },
         {
           name: `twitter:card`,
@@ -83,6 +97,7 @@ SEO.propTypes = {
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
+  mainImage: PropTypes.object,
 }
 
 export default SEO

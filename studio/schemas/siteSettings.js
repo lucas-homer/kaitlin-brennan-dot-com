@@ -28,6 +28,11 @@ export default {
       name: "author",
       title: "Author",
       type: "string"
+    },
+    {
+      name: "ogImage",
+      title: "open graph image",
+      type: "mainImage"
     }
   ]
 };
