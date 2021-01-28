@@ -5,26 +5,39 @@ import { encode } from "../lib/helpers"
 
 export default function NewsletterLanding() {
   const [state, setState] = React.useState({})
+  const [isLoading, setIsLoading] = React.useState(false)
+  const [isError, setIsError] = React.useState(false)
   const [showSuccessEmoji, setShowSuccessEmoji] = React.useState(false)
   const handleChange = e => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault()
+    setIsLoading(true)
+
     const form = e.target
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": form.getAttribute("name"),
-        ...state,
-      }),
-    })
-      .then(() => {
-        setShowSuccessEmoji(true)
+
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": form.getAttribute("name"),
+          ...state,
+        }),
       })
-      .catch(error => alert(error))
+
+      form.reset()
+
+      setIsError(false)
+      setShowSuccessEmoji(true)
+    } catch (error) {
+      setShowSuccessEmoji(false)
+      setIsError(true)
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -60,26 +73,37 @@ export default function NewsletterLanding() {
         {showSuccessEmoji ? (
           <h4
             sx={{
-              color: "highlight",
+              color: "purp",
               textAlign: "center",
               marginBottom: ".5rem",
             }}
           >
             {" "}
-            <span role="img" aria-label="red heart">
-              ❤️
+            <span role="img" aria-label="purple heart">
+              💜
             </span>{" "}
-            I appreciate you!{" "}
-            <span role="img" aria-label="red heart">
-              ❤️
+            Thanks! I sent an email to confirm.{" "}
+            <span role="img" aria-label="purple heart">
+              💜
             </span>
+          </h4>
+        ) : null}
+        {isError ? (
+          <h4
+            sx={{
+              color: "highlight",
+              textAlign: "center",
+              marginBottom: ".5rem",
+            }}
+          >
+            Oh no! There was an error. Try again?
           </h4>
         ) : null}
       </div>
 
       <form
         name="newsletter"
-        method="post"
+        method="POST"
         action="/"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
@@ -124,7 +148,7 @@ export default function NewsletterLanding() {
             marginLeft: "-8px",
           }}
         >
-          Subscribe
+          {isLoading ? "   ...   " : "Subscribe"}
         </button>
       </form>
     </section>

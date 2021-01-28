@@ -22,7 +22,11 @@ export default function ContactForm() {
         ...state,
       }),
     })
-      .then(() => navigate(form.getAttribute("action")))
+      .then(() => {
+        navigate(form.getAttribute("action"))
+        form.reset()
+      })
+
       .catch(error => alert(error))
   }
 

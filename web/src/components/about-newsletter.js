@@ -22,6 +22,7 @@ export default function AboutNewsletter() {
       }),
     })
       .then(() => {
+        form.reset()
         setShowSuccessEmoji(true)
       })
       .catch(error => alert(error))
@@ -64,7 +65,7 @@ export default function AboutNewsletter() {
       <form
         name="newsletter"
         method="post"
-        action="/"
+        action="/about"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         onSubmit={handleSubmit}
