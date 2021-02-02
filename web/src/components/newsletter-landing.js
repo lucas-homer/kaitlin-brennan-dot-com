@@ -60,7 +60,9 @@ export default function NewsletterLanding() {
           <span role="img" aria-label="purple heart">
             💜
           </span>{" "}
-          Thanks! I sent an email to confirm.{" "}
+          <span sx={{ fontStyle: "italic" }}>
+            Thanks! I sent an email to confirm.
+          </span>{" "}
           <span role="img" aria-label="purple heart">
             💜
           </span>
