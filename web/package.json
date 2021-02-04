@@ -31,7 +31,6 @@
     "theme-ui": "^0.3.1"
   },
   "devDependencies": {
-    "netlify-lambda": "^2.0.3",
     "prettier": "2.0.5"
   },
   "scripts": {
@@ -42,7 +41,6 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "postinstall": "netlify-lambda install"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   }
 }
