@@ -85,6 +85,16 @@ export const query = graphql`
         }
       }
     }
+
+    services: allSanityService {
+      edges {
+        node {
+          id
+          title
+          description
+        }
+      }
+    }
   }
 `
 
@@ -105,6 +115,10 @@ const IndexPage = props => {
     ? mapEdgesToNodes(data.posts).filter(filterOutDocsWithoutSlugs)
     : []
 
+  const serviceNodes = (data || {}).services
+    ? mapEdgesToNodes(data.services)
+    : []
+
   if (!site) {
     throw new Error(
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
@@ -119,7 +133,7 @@ const IndexPage = props => {
         keywords={site.keywords}
         mainImage={site.ogImage}
       />
-      <SamplesCard />
+      <SamplesCard services={serviceNodes} />
       <Divider />
       {postNodes && (
         <BlogPostPreviewGrid

@@ -1,8 +1,16 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
+import { navigate } from "@reach/router"
 
-export default function SamplesLanding() {
+export default function SamplesLanding({ services }) {
+  const handleKeyDown = (ev, id) => {
+    if (ev.keyCode === 13) {
+      console.log("ev", ev)
+      navigate(`/about#${id}`)
+    }
+  }
+
   return (
     <section
       sx={{
@@ -22,7 +30,7 @@ export default function SamplesLanding() {
         <span aria-label="boom" role="img">
           💥
         </span>{" "}
-        Digital Marketing{" "}
+        Services{" "}
         <span aria-label="boom" role="img">
           💥
         </span>
@@ -34,16 +42,7 @@ export default function SamplesLanding() {
           fontWeight: "body",
         }}
       >
-        <span aria-label="line graph showing growth" role="img">
-          📈
-        </span>{" "}
-        <em
-          sx={{
-            textDecoration: "underline rgba(255, 65, 51, 1)",
-          }}
-        >
-          I am a pro at growth marketing.
-        </em>
+        I solemnly swear to never use #buzzwords
       </Styled.h5>
       <ul
         sx={{
@@ -55,9 +54,24 @@ export default function SamplesLanding() {
           },
         }}
       >
-        <li>172 years proven experience</li>
-        <li>Great referrals</li>
-        <li>Data driven results</li>
+        {services.map(service => (
+          <li key={service.id}>
+            {" "}
+            <em
+              onClick={() => navigate(`/about#${service.id}`)}
+              role="link"
+              tabIndex="0"
+              onKeyDown={ev => handleKeyDown(ev, service.id)}
+              sx={{
+                color: "text",
+                textDecoration: "underline solid #FF4133",
+                cursor: "pointer",
+              }}
+            >
+              {service.title}
+            </em>
+          </li>
+        ))}
       </ul>
       <button
         sx={{

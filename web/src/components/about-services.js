@@ -35,6 +35,7 @@ export default function AboutServices({ services }) {
       >
         {services.map(service => (
           <ServiceCard
+            specialId={service.id}
             key={service.id}
             title={service.title}
             description={service.description}
@@ -45,7 +46,7 @@ export default function AboutServices({ services }) {
   )
 }
 
-function ServiceCard({ title, description }) {
+function ServiceCard({ specialId, title, description }) {
   return (
     <div
       sx={{
@@ -57,6 +58,7 @@ function ServiceCard({ title, description }) {
         filter: "drop-shadow(16px 16px 20px #CECECE)",
         textAlign: "center",
       }}
+      id={specialId}
     >
       <Styled.h4>{title}</Styled.h4>
       <Styled.p>{description}</Styled.p>
