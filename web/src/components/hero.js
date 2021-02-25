@@ -7,8 +7,6 @@ export default function Hero() {
   return (
     <section
       sx={{
-        background: theme =>
-          `linear-gradient(180deg, ${theme.colors.backgroundGrey} 60%, ${theme.colors.white} 40%)`,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -25,33 +23,35 @@ export default function Hero() {
       <article
         sx={{
           display: "flex",
-          alignItems: "baseline",
-          flexWrap: "wrap",
+          flexDirection: "column",
+          paddingY: [2, 3, 4],
+          paddingRight: [2, 3, 4],
+          paddingLeft: "0",
+          marginRight: [2, 3, 4],
+          maxWidth: "500px",
         }}
       >
-        <aside
+        <Styled.h2
           sx={{
-            paddingY: [2, 3, 4],
-            paddingRight: [2, 3, 4],
-            paddingLeft: "0",
-            marginRight: [2, 3, 4],
+            marginBottom: [1],
+            variant: "text.heading",
           }}
         >
-          <Styled.h2
-            sx={{
-              marginBottom: [1],
-              variant: "text.heading",
-            }}
-          >
-            Content Creator
-          </Styled.h2>
-          <Styled.h4>Clicks Queen</Styled.h4>
-        </aside>
+          Content Creator
+        </Styled.h2>
+        <Styled.h4>Clicks Queen</Styled.h4>
+        <Styled.h6>
+          This will be a two to three sentence subheader. Maybe a few statements
+          that project sharp, funny, productive. Sounds nice, right?
+        </Styled.h6>
         <button
           type="button"
           sx={{
             variant: "buttons.primary",
             fontSize: 4,
+            mr: "auto",
+            ml: "12px",
+            justifySelf: "left",
           }}
         >
           <Link
