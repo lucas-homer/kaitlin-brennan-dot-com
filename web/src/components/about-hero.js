@@ -27,8 +27,8 @@ export default function AboutHero() {
       >
         <Styled.h3>
           About Me{" "}
-          <span role="img" aria-label="emoji with glasses">
-            🤓
+          <span role="img" aria-label="woman dancing emoji">
+            💃🏻
           </span>
         </Styled.h3>
         <Styled.h5
