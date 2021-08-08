@@ -33,6 +33,16 @@ export const query = graphql`
         }
       }
     }
+    aboutPage: allSanityAboutPage(limit: 1) {
+      edges {
+        node {
+          heroButton
+          heroSubtitle
+          heroTitle
+          id
+        }
+      }
+    }
   }
 `
 
@@ -53,15 +63,19 @@ function AboutPage({ data, errors }) {
     ? mapEdgesToNodes(data.skillsets)
     : []
 
+  const aboutPageNode = (data || {}).aboutPage
+    ? mapEdgesToNodes(data.aboutPage)[0]
+    : []
+
   return (
     <React.Fragment>
       <SEO title="About" />
       <Header />
-      <AboutHero />
+      <AboutHero aboutPageHeroCopy={aboutPageNode} />
       <AboutServices services={serviceNodes} />
       <AboutBackground skillsets={skillsetNodes} />
       <AboutNewsletter />
-      <Footer sx={{}} />
+      <Footer />
     </React.Fragment>
   )
 }

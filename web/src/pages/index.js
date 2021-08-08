@@ -6,7 +6,7 @@ import SEO from "../components/seo"
 import GraphQLErrorList from "../components/graphql-error-list"
 import { mapEdgesToNodes, filterOutDocsWithoutSlugs } from "../lib/helpers"
 
-import Hero from "../components/hero"
+import LandingHero from "../components/hero"
 import Divider from "../components/divider"
 import SamplesCard from "../components/samples-landing"
 import NewsletterForm from "../components/newsletter-landing"
@@ -95,6 +95,21 @@ export const query = graphql`
         }
       }
     }
+
+    landingPageCopy: allSanityLandingPage(limit: 1) {
+      edges {
+        node {
+          id
+          heroBody
+          heroButton
+          heroSubtitle
+          heroTitle
+          servicesButton
+          servicesSubtitle
+          servicesTitle
+        }
+      }
+    }
   }
 `
 
@@ -119,6 +134,10 @@ const IndexPage = props => {
     ? mapEdgesToNodes(data.services)
     : []
 
+  const landingPageCopyNode = (data || {}).landingPageCopy
+    ? mapEdgesToNodes(data.landingPageCopy)[0]
+    : []
+
   if (!site) {
     throw new Error(
       'Missing "Site settings". Open the studio at http://localhost:3333 and add some content to "Site settings" and restart the development server.'
@@ -126,14 +145,21 @@ const IndexPage = props => {
   }
 
   return (
-    <Layout isHeroLayout={true} HeroComponent={Hero}>
+    <Layout
+      isHeroLayout={true}
+      HeroComponent={LandingHero}
+      heroCopyData={landingPageCopyNode}
+    >
       <SEO
         title={site.title}
         description={site.description}
         keywords={site.keywords}
         mainImage={site.ogImage}
       />
-      <SamplesCard services={serviceNodes} />
+      <SamplesCard
+        services={serviceNodes}
+        landingPageCopy={landingPageCopyNode}
+      />
       <Divider />
       {postNodes && (
         <BlogPostPreviewGrid

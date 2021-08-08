@@ -37,6 +37,16 @@ export const query = graphql`
         }
       }
     }
+    workSamplesPageCopy: allSanityWorkSamplesPage(limit: 1) {
+      edges {
+        node {
+          id
+          heroTitle
+          heroSubtitle
+          heroButton
+        }
+      }
+    }
   }
 `
 
@@ -57,8 +67,16 @@ function SamplesPage({ data, errors }) {
     ? mapEdgesToNodes(data.sampleTypes)
     : []
 
+  const workSamplesPageCopyNode = (data || {}).workSamplesPageCopy
+    ? mapEdgesToNodes(data.workSamplesPageCopy)[0]
+    : []
+
   return (
-    <Layout isHeroLayout HeroComponent={SamplesHero}>
+    <Layout
+      isHeroLayout
+      HeroComponent={SamplesHero}
+      heroCopyData={workSamplesPageCopyNode}
+    >
       <SEO title="Samples" />
       <WorkSamples workSamples={workSampleNodes} sampleTypes={sampleTypes} />
     </Layout>
