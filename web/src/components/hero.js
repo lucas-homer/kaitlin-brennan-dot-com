@@ -3,7 +3,8 @@ import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
 import HumaaanLanding from "./humaaan-landing"
 
-export default function Hero() {
+export default function LandingHero({ heroCopyData }) {
+  console.log(`heroCopyData`, heroCopyData)
   return (
     <section
       sx={{
@@ -37,13 +38,10 @@ export default function Hero() {
             variant: "text.heading",
           }}
         >
-          Content Creator
+          {heroCopyData.heroTitle}
         </Styled.h2>
-        <Styled.h4>Clicks Queen</Styled.h4>
-        <Styled.h6>
-          This will be a two to three sentence subheader. Maybe a few statements
-          that project sharp, funny, productive. Sounds nice, right?
-        </Styled.h6>
+        <Styled.h4>{heroCopyData.heroSubtitle}</Styled.h4>
+        <Styled.h6>{heroCopyData.heroBody}</Styled.h6>
         <button
           type="button"
           sx={{
@@ -61,7 +59,7 @@ export default function Hero() {
               color: "white",
             }}
           >
-            I'll bite
+            {heroCopyData.heroButton}
           </Link>
         </button>
       </article>

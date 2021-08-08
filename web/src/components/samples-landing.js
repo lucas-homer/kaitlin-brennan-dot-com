@@ -3,7 +3,7 @@ import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
 import { navigate } from "@reach/router"
 
-export default function SamplesLanding({ services }) {
+export default function SamplesLanding({ services, landingPageCopy }) {
   const handleKeyDown = (ev, id) => {
     if (ev.keyCode === 13) {
       console.log("ev", ev)
@@ -27,13 +27,7 @@ export default function SamplesLanding({ services }) {
           textAlign: "center",
         }}
       >
-        <span aria-label="boom" role="img">
-          💥
-        </span>{" "}
-        Services{" "}
-        <span aria-label="boom" role="img">
-          💥
-        </span>
+        {landingPageCopy.servicesTitle}
       </Styled.h3>
       <Styled.h5
         sx={{
@@ -42,7 +36,7 @@ export default function SamplesLanding({ services }) {
           fontWeight: "body",
         }}
       >
-        I solemnly swear to never use #buzzwords
+        {landingPageCopy.servicesSubtitle}
       </Styled.h5>
       <ul
         sx={{
@@ -87,7 +81,7 @@ export default function SamplesLanding({ services }) {
             color: "primary",
           }}
         >
-          See samples
+          {landingPageCopy.servicesButton}
         </Link>
       </button>
     </section>

@@ -12,11 +12,16 @@ import Header from "./header"
 import Footer from "./footer"
 import "./layout.css"
 
-function Layout({ children, isHeroLayout = false, HeroComponent }) {
+function Layout({
+  children,
+  isHeroLayout = false,
+  HeroComponent,
+  heroCopyData,
+}) {
   return (
     <React.Fragment>
       <Header />
-      {isHeroLayout && <HeroComponent />}
+      {isHeroLayout && <HeroComponent heroCopyData={heroCopyData} />}
       <div
         style={{
           margin: `0 auto`,

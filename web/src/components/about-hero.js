@@ -3,7 +3,7 @@ import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
 import WorkSamplesHuman from "./work-samples-human"
 
-export default function AboutHero() {
+export default function AboutHero({ aboutPageHeroCopy }) {
   return (
     <section
       sx={{
@@ -25,19 +25,14 @@ export default function AboutHero() {
           padding: 2,
         }}
       >
-        <Styled.h3>
-          About Me{" "}
-          <span role="img" aria-label="woman dancing emoji">
-            💃🏻
-          </span>
-        </Styled.h3>
+        <Styled.h3>{aboutPageHeroCopy.heroTitle}</Styled.h3>
         <Styled.h5
           sx={{
             fontWeight: "body",
             fontFamily: "body",
           }}
         >
-          I'm Kaitlin. I'm awesome, you're awesome. Let's be friends.
+          {aboutPageHeroCopy.heroSubtitle}
         </Styled.h5>
         <button
           sx={{
@@ -52,7 +47,7 @@ export default function AboutHero() {
               color: "white",
             }}
           >
-            Reach out!
+            {aboutPageHeroCopy.heroButton}
           </Link>
         </button>
       </article>
