@@ -18,6 +18,11 @@ import sampleType from "./workSampleType";
 import service from "./service";
 import skillset from "./skillset";
 
+// some schemas for customizing copy in a few pages
+import aboutPage from "./aboutPage";
+import landingPage from "./landingPage";
+import workSamplesPage from "./workSamplesPage";
+
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
   // We name our schema
@@ -39,6 +44,9 @@ export default createSchema({
     workSample,
     sampleType,
     service,
-    skillset
+    skillset,
+    aboutPage,
+    landingPage,
+    workSamplesPage
   ])
 });
