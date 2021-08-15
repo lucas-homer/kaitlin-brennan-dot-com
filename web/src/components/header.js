@@ -64,9 +64,9 @@ const Header = () => {
                 color: "secondary",
               },
             }}
-            to="/blog"
+            to="/about"
           >
-            Blog
+            About
           </Link>
           <Link
             sx={{
@@ -91,10 +91,11 @@ const Header = () => {
                 color: "secondary",
               },
             }}
-            to="/about"
+            to="/blog"
           >
-            About
+            Blog
           </Link>
+
           <Link
             sx={{
               color: "testText",
@@ -140,9 +141,9 @@ const Header = () => {
                     padding: [2],
                     textDecoration: `none`,
                   }}
-                  to="/blog"
+                  to="/about"
                 >
-                  Blog
+                  About
                 </Link>
                 <Link
                   sx={{
@@ -154,16 +155,15 @@ const Header = () => {
                 >
                   Samples
                 </Link>
-
                 <Link
                   sx={{
                     color: "white",
                     padding: [2],
                     textDecoration: `none`,
                   }}
-                  to="/about"
+                  to="/blog"
                 >
-                  About
+                  Blog
                 </Link>
                 <Link
                   sx={{
