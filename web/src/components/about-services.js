@@ -31,6 +31,8 @@ export default function AboutServices({ services }) {
           alignItems: "center",
           justifyContent: "center",
           flexWrap: "wrap",
+          maxWidth: 900,
+          margin: "0 auto",
         }}
       >
         {services.map(service => (

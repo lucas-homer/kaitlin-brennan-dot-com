@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 import HumaaanLanding from "./humaaan-landing"
 
 export default function LandingHero({ heroCopyData }) {
-  console.log(`heroCopyData`, heroCopyData)
   return (
     <section
       sx={{
@@ -12,6 +11,11 @@ export default function LandingHero({ heroCopyData }) {
         alignItems: "center",
         justifyContent: "center",
         padding: "0 1rem",
+        mx: "auto",
+        mt: [8],
+        "@media screen and (max-width: 450px)": {
+          flexWrap: "wrap-reverse",
+        },
       }}
     >
       <HumaaanLanding
@@ -19,22 +23,26 @@ export default function LandingHero({ heroCopyData }) {
           maxWidth: "300px",
           minWidth: "150px",
           margin: "0 10px",
+          "@media screen and (max-width: 450px)": {
+            maxWidth: 175,
+          },
+          maxHeight: 300,
         }}
       />
       <article
         sx={{
           display: "flex",
           flexDirection: "column",
-          paddingY: [2, 3, 4],
-          paddingRight: [2, 3, 4],
-          paddingLeft: "0",
-          marginRight: [2, 3, 4],
+          alignItems: "center",
+          padding: [2, 3, 4],
           maxWidth: "500px",
+          minWidth: "275px",
+          marginX: ["auto", 2, 3, 4],
         }}
       >
         <Styled.h2
           sx={{
-            marginBottom: [1],
+            marginBottom: [4],
             variant: "text.heading",
           }}
         >
@@ -47,8 +55,8 @@ export default function LandingHero({ heroCopyData }) {
           sx={{
             variant: "buttons.primary",
             fontSize: 4,
-            mr: "auto",
-            ml: "12px",
+            mx: "auto",
+            mb: [6],
             justifySelf: "left",
           }}
         >

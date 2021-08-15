@@ -10,7 +10,10 @@ function BlogPostPreviewGrid(props) {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
-        padding: 4,
+        // padding: 4,
+        paddingX: [4, 8],
+        paddingY: [8],
+        maxWidth: "blogPost",
         margin: "2rem auto",
       }}
     >

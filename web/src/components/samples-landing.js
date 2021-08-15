@@ -19,7 +19,7 @@ export default function SamplesLanding({ services, landingPageCopy }) {
         justifyContent: "center",
         padding: 4,
         maxWidth: "landingCardContainer",
-        margin: "2rem auto",
+        margin: "50px auto",
       }}
     >
       <Styled.h3

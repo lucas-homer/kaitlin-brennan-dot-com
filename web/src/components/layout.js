@@ -27,7 +27,7 @@ function Layout({
           margin: `0 auto`,
           maxWidth: 960,
           padding: `0 1.0875rem 1.45rem`,
-          minHeight: "80vh",
+          minHeight: "55vh",
         }}
       >
         <main>{children}</main>
