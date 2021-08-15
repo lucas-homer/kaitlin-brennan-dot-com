@@ -138,26 +138,35 @@ export default function NewsletterLanding() {
             </label>
           </p>
 
-          <input
-            onChange={handleChange}
-            aria-label="Email"
-            type="email"
-            name="email"
-            placeholder="Email"
+          <div
             sx={{
-              variant: "inputs.primary",
-            }}
-          />
-          <button
-            type="submit"
-            sx={{
-              variant: "buttons.secondary",
-              fontSize: 4,
-              marginLeft: "-8px",
+              display: "flex",
+              flexWrap: "nowrap",
             }}
           >
-            {isLoading ? "Loading..." : "Subscribe"}
-          </button>
+            <input
+              onChange={handleChange}
+              aria-label="Email"
+              type="email"
+              name="email"
+              placeholder="Email"
+              sx={{
+                variant: "inputs.primary",
+                width: "100%",
+                maxWidth: 200,
+              }}
+            />
+            <button
+              type="submit"
+              sx={{
+                variant: "buttons.secondary",
+                fontSize: 4,
+                marginLeft: "-8px",
+              }}
+            >
+              {isLoading ? "Loading..." : "Subscribe"}
+            </button>
+          </div>
         </form>
       </section>
     </>
