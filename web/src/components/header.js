@@ -33,6 +33,7 @@ const Header = () => {
             variant: "text.heading",
             color: "text",
             fontWeight: "heavy",
+            fontSize: [3, 4, 5],
           }}
         >
           Kaitlin Brennan
