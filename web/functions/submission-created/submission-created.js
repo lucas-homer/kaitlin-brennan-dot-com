@@ -28,7 +28,7 @@ exports.handler = async event => {
         }
       )
       const data = await response.json()
-
+      console.log(`DATA LOGGED IN TRY BLOCK`, data)
       if (response.status === 400) {
         return {
           statusCode: 400,
