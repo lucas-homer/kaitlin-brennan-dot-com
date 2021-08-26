@@ -1,23 +1,11 @@
-/* eslint-disable */
-
-// // optionally configure local env vars
-// require('dotenv').config()
-
-// // details in https://css-tricks.com/using-netlify-forms-and-netlify-functions-to-build-an-email-sign-up-widget
 const fetch = require("node-fetch")
 const { EMAIL_TOKEN } = process.env
 
 exports.handler = async event => {
-  // console.log(JSON.parse(event.body)) // todo -- delete this once you're one developing, we don't need this in the netlify logs
-  const body = await JSON.parse(event.body)
-  const { payload } = body
-  console.log(`payload`, payload)
-  const email = payload.email
-  console.log(`email`, email)
-  const formName = payload.form_name
-  console.log(`formName`, formName)
+  const { payload } = await JSON.parse(event.body)
+  const { email, form_name } = payload
 
-  if (formName === "newsletter") {
+  if (form_name === "newsletter") {
     console.log(`Recieved a Newsletter submission: ${email}`)
     try {
       const response = await fetch(
@@ -32,15 +20,6 @@ exports.handler = async event => {
         }
       )
       const data = await response.json()
-      console.log(`DATA LOGGED IN TRY BLOCK`, data)
-      if (response.status === 400) {
-        return {
-          statusCode: 400,
-          body: JSON.stringify({
-            message: "Looks like that address already subscribed.",
-          }),
-        }
-      }
 
       console.log(`New subscriber submitted to Buttondown - ${data.email}`)
       return {
@@ -49,11 +28,10 @@ exports.handler = async event => {
       }
     } catch (error) {
       console.log("error", error)
-      throw new Error("Oh no! There was an error")
     }
   }
 
-  if (formName === "contact") {
+  if (form_name === "contact") {
     console.log("You need to implement this!")
   }
 }
