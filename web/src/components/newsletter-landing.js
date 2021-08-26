@@ -21,7 +21,8 @@ export default function NewsletterLanding() {
     const form = e.target
 
     try {
-      const response = await fetch("/", {
+      console.log("inside the TRY")
+      await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({
@@ -30,17 +31,11 @@ export default function NewsletterLanding() {
         }),
       })
 
-      const body = await response.json()
-
-      if (response.status === 400) {
-        setError(body.message)
-        return
-      }
-
       form.reset()
       setShowSuccessEmoji(true)
     } catch (error) {
-      setError("Oh no! There was an error.")
+      console.log(`error from catch`, error)
+      setError(error.message)
     } finally {
       setIsLoading(false)
     }
