@@ -143,6 +143,7 @@ export default function NewsletterLanding() {
               onChange={handleChange}
               aria-label="Email"
               type="email"
+              required
               name="email"
               placeholder="Email"
               sx={{

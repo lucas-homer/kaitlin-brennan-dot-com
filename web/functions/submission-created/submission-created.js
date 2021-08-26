@@ -8,10 +8,11 @@ const fetch = require("node-fetch")
 const { EMAIL_TOKEN } = process.env
 
 exports.handler = async event => {
-  console.log(JSON.parse(event.body)) // todo -- delete this once you're one developing, we don't need this in the netlify logs
+  // console.log(JSON.parse(event.body)) // todo -- delete this once you're one developing, we don't need this in the netlify logs
 
   const email = JSON.parse(event.body).payload.email
   const formName = JSON.parse(event.body).payload.data["form-name"]
+  console.log(`formName`, formName)
 
   if (formName === "newsletter") {
     console.log(`Recieved a Newsletter submission: ${email}`)
