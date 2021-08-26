@@ -14,7 +14,7 @@ exports.handler = async event => {
   console.log(`payload`, payload)
   const email = payload.email
   console.log(`email`, email)
-  const formName = payload.data["form-name"]
+  const formName = payload.form_name
   console.log(`formName`, formName)
 
   if (formName === "newsletter") {
