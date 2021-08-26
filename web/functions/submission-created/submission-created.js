@@ -9,10 +9,12 @@ const { EMAIL_TOKEN } = process.env
 
 exports.handler = async event => {
   // console.log(JSON.parse(event.body)) // todo -- delete this once you're one developing, we don't need this in the netlify logs
-  const payload = await JSON.parse(event.body).paylod
+  const body = await JSON.parse(event.body)
+  const { payload } = body
   console.log(`payload`, payload)
-  const email = JSON.parse(event.body).payload.email
-  const formName = JSON.parse(event.body).payload.data["form-name"]
+  const email = payload.email
+  console.log(`email`, email)
+  const formName = payload.data["form-name"]
   console.log(`formName`, formName)
 
   if (formName === "newsletter") {
