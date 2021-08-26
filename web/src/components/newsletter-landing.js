@@ -21,7 +21,6 @@ export default function NewsletterLanding() {
     const form = e.target
 
     try {
-      console.log("inside the TRY")
       await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },

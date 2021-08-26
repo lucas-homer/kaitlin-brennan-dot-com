@@ -21,7 +21,7 @@ export default function AboutNewsletter() {
     const form = e.target
 
     try {
-      const response = await fetch("/", {
+      await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: encode({
@@ -29,17 +29,12 @@ export default function AboutNewsletter() {
           ...state,
         }),
       })
-      const body = await response.json()
 
-      if (response.status === 400) {
-        setError(body.message)
-        return
-      }
-
-      setShowSuccessEmoji(true)
       form.reset()
+      setShowSuccessEmoji(true)
     } catch (error) {
-      setError("Oh no! There was an error.")
+      console.log(`error from catch`, error)
+      setError(error.message)
     } finally {
       setIsLoading(false)
     }
@@ -115,7 +110,7 @@ export default function AboutNewsletter() {
 
         <form
           name="newsletter"
-          method="post"
+          method="POST"
           action="/about"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
@@ -153,6 +148,7 @@ export default function AboutNewsletter() {
               onChange={handleChange}
               aria-label="Email"
               type="email"
+              required
               name="email"
               placeholder="Email"
               sx={{
