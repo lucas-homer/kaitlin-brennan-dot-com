@@ -13,7 +13,7 @@ export default {
     {
       name: "description",
       title: "Description",
-      type: "text"
+      type: "blockText"
     }
   ],
   liveEdit: true
