@@ -9,6 +9,7 @@ import { mapEdgesToNodes } from "../lib/helpers"
 import LandingHero from "../components/hero"
 import SamplesCard from "../components/samples-landing"
 import NewsletterForm from "../components/newsletter-landing"
+import Divider from "../components/divider"
 
 export const query = graphql`
   query IndexPageQuery {
@@ -50,7 +51,7 @@ export const query = graphql`
         node {
           id
           title
-          description
+          _rawDescription
         }
       }
     }
@@ -115,6 +116,8 @@ const IndexPage = props => {
         services={serviceNodes}
         landingPageCopy={landingPageCopyNode}
       />
+      <Divider />
+
       <NewsletterForm />
     </Layout>
   )

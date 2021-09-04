@@ -54,7 +54,7 @@ function BlogPage(props) {
       }}
     >
       <Layout>
-        <SEO title="Blog" />
+        <SEO title="Kaitlin Has Opinions" />
         <section
           sx={{
             marginY: [6],
@@ -62,7 +62,7 @@ function BlogPage(props) {
             maxWidth: "600px",
           }}
         >
-          <Styled.h2>Blog</Styled.h2>
+          <Styled.h2>Kaitlin Has Opinions</Styled.h2>
           {postNodes && <BlogPostList nodes={postNodes} />}
         </section>
       </Layout>

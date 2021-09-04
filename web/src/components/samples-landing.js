@@ -2,6 +2,7 @@
 import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
 import { navigate } from "@reach/router"
+import BlockText from "./block-text"
 
 export default function SamplesLanding({ services, landingPageCopy }) {
   const handleKeyDown = (ev, id) => {
@@ -17,6 +18,7 @@ export default function SamplesLanding({ services, landingPageCopy }) {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
+        alignItems: "center",
         padding: 4,
         maxWidth: "landingCardContainer",
         margin: "50px auto",
@@ -41,29 +43,41 @@ export default function SamplesLanding({ services, landingPageCopy }) {
       <ul
         sx={{
           listStyleType: "none",
-          textAlign: "center",
+          display: "flex",
+          flexDirection: "column",
+          flexWrap: "nowrap",
           marginLeft: "0",
-          "> li": {
-            margin: "0",
-          },
         }}
       >
         {services.map(service => (
-          <li key={service.id}>
-            {" "}
-            <em
-              onClick={() => navigate(`/about#${service.id}`)}
-              role="link"
-              tabIndex="0"
-              onKeyDown={ev => handleKeyDown(ev, service.id)}
+          <li
+            sx={{
+              maxWidth: ["300px", "500px"],
+              mb: [4, 6],
+              variant: "cards.blogPreview",
+              backgroundColor: "white",
+              transition: "filter 400ms",
+              "&:not(:disabled):hover": {
+                filter: "contrast(102%) drop-shadow(16px 16px 20px #CECECE)",
+              },
+              textDecoration: "none",
+              color: "text",
+            }}
+            key={service.id}
+          >
+            <Styled.h5
               sx={{
                 color: "text",
                 textDecoration: "underline solid #FF4133",
-                cursor: "pointer",
+                fontStyle: "italic",
+                mb: [4],
               }}
             >
               {service.title}
-            </em>
+            </Styled.h5>
+            <blockquote>
+              <BlockText blocks={service._rawDescription} />
+            </blockquote>
           </li>
         ))}
       </ul>

@@ -49,7 +49,7 @@ export default function LandingHero({ heroCopyData }) {
           {heroCopyData.heroTitle}
         </Styled.h2>
         <Styled.h4>{heroCopyData.heroSubtitle}</Styled.h4>
-        <Styled.h6>{heroCopyData.heroBody}</Styled.h6>
+        <Styled.p sx={{ lineHeight: "1.4" }}>{heroCopyData.heroBody}</Styled.p>
         <button
           type="button"
           sx={{
