@@ -30,7 +30,7 @@ export const query = graphql`
         node {
           id
           title
-          description
+          _rawDescription
         }
       }
     }
@@ -117,7 +117,6 @@ function AboutPage({ data, errors }) {
       <AboutHero aboutPageHeroCopy={aboutPageNode} />
       <AboutBackground skillsets={skillsetNodes} />
       <AboutServices services={serviceNodes} />
-      {/* <Divider /> */}
       {postNodes && (
         <BlogPostPreviewGrid
           title="What is that girl talking about?"

@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
+import BlockText from "./block-text"
 
 export default function AboutServices({ services }) {
   return (
@@ -8,9 +9,12 @@ export default function AboutServices({ services }) {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
+        alignItems: "center",
+        flexWrap: "nowrap",
         backgroundColor: "backgroundGrey",
         paddingX: [4, 8],
         paddingY: [8],
+        margin: "2rem auto",
       }}
     >
       <div
@@ -27,11 +31,11 @@ export default function AboutServices({ services }) {
       </div>
       <div
         sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          flexWrap: "wrap",
-          maxWidth: 900,
+          display: "grid",
+          gridTemplateRows: "auto",
+          gridTemplateColumns:
+            "repeat(auto-fill, minmax(calc(300px - 1.5rem), 1fr))",
+          gap: "3rem",
           margin: "0 auto",
         }}
       >
@@ -40,7 +44,7 @@ export default function AboutServices({ services }) {
             specialId={service.id}
             key={service.id}
             title={service.title}
-            description={service.description}
+            description={service._rawDescription}
           />
         ))}
       </div>
@@ -52,18 +56,24 @@ function ServiceCard({ specialId, title, description }) {
   return (
     <div
       sx={{
+        variant: "cards.blogPreview",
         backgroundColor: "white",
-        width: "serviceCard",
-        borderRadius: "primary",
-        padding: [7],
-        margin: [4, 8],
+        px: [3],
+        pt: [6],
         filter: "drop-shadow(16px 16px 20px #CECECE)",
-        textAlign: "center",
       }}
       id={specialId}
     >
-      <Styled.h4>{title}</Styled.h4>
-      <Styled.p>{description}</Styled.p>
+      <Styled.h4
+        sx={{
+          textAlign: "center",
+        }}
+      >
+        {title}
+      </Styled.h4>
+      <blockquote>
+        <BlockText blocks={description} />
+      </blockquote>
     </div>
   )
 }
