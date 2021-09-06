@@ -2,7 +2,7 @@
 import { Link } from "gatsby"
 import { useState } from "react"
 import PropTypes from "prop-types"
-import { jsx } from "theme-ui"
+import { jsx, Styled } from "theme-ui"
 import Popover, { ArrowContainer } from "react-tiny-popover"
 
 const Header = () => {
@@ -11,34 +11,32 @@ const Header = () => {
     <header
       sx={{
         // this uses the value from `theme.space[4]`
-        paddingTop: 4,
-        paddingBottom: 2,
+        paddingY: 2,
         paddingX: 4,
         // these use values from `theme.colors`
         backgroundColor: "backgroundGrey",
         display: "flex",
-        alignItems: "baseline",
+        alignItems: "center",
         justifyContent: "space-between",
       }}
     >
-      <h2
+      <Link
+        to="/"
         sx={{
-          paddingX: [0, 0, 4],
+          color: "text",
+          textDecoration: `none`,
         }}
       >
-        <Link
-          to="/"
+        <Styled.h3
           sx={{
-            textDecoration: `none`,
-            variant: "text.heading",
-            color: "text",
-            fontWeight: "heavy",
             fontSize: [3, 4, 5],
+            my: "0px",
+            paddingX: [0, 0, 4],
           }}
         >
           Kaitlin Brennan
-        </Link>
-      </h2>
+        </Styled.h3>
+      </Link>
       <nav
         sx={{
           display: "flex",

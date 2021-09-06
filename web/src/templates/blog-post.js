@@ -87,16 +87,10 @@ const BlogPostTemplate = props => {
   const { mainImage } = post
 
   return (
-    <div
-      sx={{
-        bg: "backgroundGrey",
-      }}
-    >
-      <Layout>
-        {post && <SEO title={post.title || "Untitled"} mainImage={mainImage} />}
-        {post && <BlogPost {...post} />}
-      </Layout>
-    </div>
+    <Layout>
+      {post && <SEO title={post.title || "Untitled"} mainImage={mainImage} />}
+      {post && <BlogPost {...post} />}
+    </Layout>
   )
 }
 

@@ -1,12 +1,9 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import * as React from "react"
 import { graphql } from "gatsby"
 import GraphQLErrorList from "../components/graphql-error-list"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import Header from "../components/header"
-import Footer from "../components/footer"
 import AboutHero from "../components/about-hero"
 import AboutServices from "../components/about-services"
 import AboutBackground from "../components/about-background"
@@ -111,10 +108,12 @@ function AboutPage({ data, errors }) {
     : []
 
   return (
-    <React.Fragment>
+    <Layout
+      isHeroLayout={true}
+      HeroComponent={AboutHero}
+      heroCopyData={aboutPageNode}
+    >
       <SEO title="About" />
-      <Header />
-      <AboutHero aboutPageHeroCopy={aboutPageNode} />
       <AboutBackground skillsets={skillsetNodes} />
       <AboutServices services={serviceNodes} />
       {postNodes && (
@@ -126,8 +125,7 @@ function AboutPage({ data, errors }) {
         />
       )}
       <AboutNewsletter />
-      <Footer />
-    </React.Fragment>
+    </Layout>
   )
 }
 

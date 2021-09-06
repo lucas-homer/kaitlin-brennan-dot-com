@@ -16,7 +16,7 @@ export default function BlogPostPreview(props) {
       }}
     >
       <Link
-        to={getBlogUrl(props.publishedAt, props.slug)}
+        to={getBlogUrl(props?.publishedAt, props.slug)}
         sx={{
           textDecoration: "none",
           color: "text",

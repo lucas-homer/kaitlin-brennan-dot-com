@@ -6,30 +6,35 @@ export default function WorkSamples({ workSamples, sampleTypes }) {
   return (
     <section
       sx={{
-        bg: "white",
-        paddingY: 8,
-        display: "grid",
-        gridTemplateColumns:
-          "repeat(auto-fill, minmax(calc(400px - 1.5rem), 1fr))",
-        gap: "3rem",
-        maxWidth: "800px",
+        paddingX: [6, 8],
+        pt: [8],
+        pb: [9],
         margin: "0 auto",
+        maxWidth: 800,
       }}
     >
-      {sampleTypes?.map((type, index) => {
-        const workSamplesForType = workSamples.filter(
-          sample => sample.sampleType.title === type.title
-        )
+      <div
+        sx={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(calc(300px), 1fr))",
+          gap: "2rem",
+        }}
+      >
+        {sampleTypes?.map((type, index) => {
+          const workSamplesForType = workSamples.filter(
+            sample => sample.sampleType.title === type.title
+          )
 
-        return (
-          <WorkSampleCard
-            sampleType={type.title}
-            key={type.title}
-            samples={workSamplesForType}
-            colorKey={index}
-          />
-        )
-      })}
+          return (
+            <WorkSampleCard
+              sampleType={type.title}
+              key={type.title}
+              samples={workSamplesForType}
+              colorKey={index}
+            />
+          )
+        })}
+      </div>
     </section>
   )
 }

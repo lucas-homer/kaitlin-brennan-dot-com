@@ -4,16 +4,14 @@ import { Link } from "gatsby"
 import WorkSamplesHuman from "./work-samples-human"
 
 export default function SamplesHero({ heroCopyData }) {
-  console.log(`heroCopyData`, heroCopyData)
   return (
     <section
       sx={{
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: "0 1rem",
-        backgroundColor: "backgroundGrey",
-        paddingTop: "2rem",
+        paddingX: [4],
+        marginY: [4, 8],
       }}
     >
       <article
@@ -56,6 +54,9 @@ export default function SamplesHero({ heroCopyData }) {
         sx={{
           maxWidth: "300px",
           minWidth: "150px",
+          "@media screen and (max-width: 350px)": {
+            display: "none",
+          },
         }}
       />
     </section>

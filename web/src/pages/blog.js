@@ -48,25 +48,19 @@ function BlogPage(props) {
     : []
 
   return (
-    <div
-      sx={{
-        bg: "backgroundGrey",
-      }}
-    >
-      <Layout>
-        <SEO title="Kaitlin Has Opinions" />
-        <section
-          sx={{
-            marginY: [6],
-            marginX: "auto",
-            maxWidth: "600px",
-          }}
-        >
-          <Styled.h2>Kaitlin Has Opinions</Styled.h2>
-          {postNodes && <BlogPostList nodes={postNodes} />}
-        </section>
-      </Layout>
-    </div>
+    <Layout>
+      <SEO title="Kaitlin Has Opinions" />
+      <section
+        sx={{
+          marginY: [6],
+          marginX: "auto",
+          maxWidth: "600px",
+        }}
+      >
+        <Styled.h2>Kaitlin Has Opinions</Styled.h2>
+        {postNodes && <BlogPostList nodes={postNodes} />}
+      </section>
+    </Layout>
   )
 }
 

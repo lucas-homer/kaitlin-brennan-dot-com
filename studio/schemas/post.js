@@ -6,7 +6,8 @@ export default {
     {
       name: "title",
       title: "Title",
-      type: "string"
+      type: "string",
+      validation: Rule => Rule.required()
     },
     {
       name: "slug",
@@ -21,7 +22,8 @@ export default {
       name: "author",
       title: "Author",
       type: "reference",
-      to: { type: "author" }
+      to: { type: "author" },
+      validation: Rule => Rule.required()
     },
     {
       name: "mainImage",
@@ -37,12 +39,14 @@ export default {
     {
       name: "publishedAt",
       title: "Published at",
-      type: "datetime"
+      type: "datetime",
+      validation: Rule => Rule.required()
     },
     {
       name: "body",
       title: "Body",
-      type: "blockContent"
+      type: "blockContent",
+      validation: Rule => Rule.required()
     },
     {
       name: "excerpt",

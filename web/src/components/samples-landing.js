@@ -1,17 +1,9 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
 import { Link } from "gatsby"
-import { navigate } from "@reach/router"
 import BlockText from "./block-text"
 
 export default function SamplesLanding({ services, landingPageCopy }) {
-  const handleKeyDown = (ev, id) => {
-    if (ev.keyCode === 13) {
-      console.log("ev", ev)
-      navigate(`/about#${id}`)
-    }
-  }
-
   return (
     <section
       sx={{

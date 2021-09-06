@@ -31,8 +31,14 @@ export default function ContactForm() {
   }
 
   return (
-    <aside>
-      <Styled.h2>Let's Connect</Styled.h2>
+    <section
+      sx={{
+        margin: "0 auto",
+        padding: "2rem",
+        maxWidth: "landingCardContainer",
+      }}
+    >
+      <Styled.h3>Let's Connect</Styled.h3>
       <form
         name="contact"
         method="post"
@@ -70,6 +76,7 @@ export default function ContactForm() {
               sx={{
                 variant: "inputs.primary",
                 width: "100%",
+                border: "1px solid grey",
               }}
             />
           </label>
@@ -86,6 +93,7 @@ export default function ContactForm() {
               sx={{
                 variant: "inputs.primary",
                 width: "100%",
+                border: "1px solid grey",
               }}
             />
           </label>
@@ -101,6 +109,7 @@ export default function ContactForm() {
               sx={{
                 variant: "inputs.primary",
                 width: "100%",
+                border: "1px solid grey",
               }}
             />
           </label>
@@ -116,6 +125,6 @@ export default function ContactForm() {
           </button>
         </p>
       </form>
-    </aside>
+    </section>
   )
 }

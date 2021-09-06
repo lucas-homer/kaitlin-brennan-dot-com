@@ -8,7 +8,6 @@ export default function Footer() {
   return (
     <footer
       sx={{
-        backgroundColor: "backgroundGrey",
         paddingY: [8],
         paddingX: [5, 10],
       }}

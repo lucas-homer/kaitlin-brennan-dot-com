@@ -41,7 +41,11 @@ export default function NewsletterLanding() {
   }
 
   return (
-    <>
+    <div
+      sx={{
+        padding: "12px",
+      }}
+    >
       {showSuccessEmoji ? (
         <h4
           sx={{
@@ -164,6 +168,6 @@ export default function NewsletterLanding() {
           </div>
         </form>
       </section>
-    </>
+    </div>
   )
 }

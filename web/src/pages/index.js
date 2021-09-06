@@ -117,7 +117,6 @@ const IndexPage = props => {
         landingPageCopy={landingPageCopyNode}
       />
       <Divider />
-
       <NewsletterForm />
     </Layout>
   )

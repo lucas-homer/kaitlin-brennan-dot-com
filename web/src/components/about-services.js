@@ -12,9 +12,11 @@ export default function AboutServices({ services }) {
         alignItems: "center",
         flexWrap: "nowrap",
         backgroundColor: "backgroundGrey",
-        paddingX: [4, 8],
-        paddingY: [8],
-        margin: "2rem auto",
+        paddingX: [6, 8],
+        pt: [8],
+        pb: [9],
+        marginX: "-16px",
+        mb: "4px",
       }}
     >
       <div
