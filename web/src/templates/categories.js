@@ -54,25 +54,19 @@ function CategoriesTemplate(props) {
     : []
 
   return (
-    <div
-      sx={{
-        bg: "backgroundGrey",
-      }}
-    >
-      <Layout>
-        <SEO title={categoryName} />
-        <section
-          sx={{
-            marginY: [6],
-            marginX: "auto",
-            maxWidth: "600px",
-          }}
-        >
-          <Styled.h2>{`${categoryName} (${totalCount})`}</Styled.h2>
-          {postNodes && <BlogPostList nodes={postNodes} />}
-        </section>
-      </Layout>
-    </div>
+    <Layout>
+      <SEO title={categoryName} />
+      <section
+        sx={{
+          marginY: [6],
+          marginX: "auto",
+          maxWidth: "600px",
+        }}
+      >
+        <Styled.h2>{`${categoryName} (${totalCount})`}</Styled.h2>
+        {postNodes && <BlogPostList nodes={postNodes} />}
+      </section>
+    </Layout>
   )
 }
 
