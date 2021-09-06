@@ -3,6 +3,7 @@ export default {
     text: "#000",
     testText: "#262627",
     backgroundGrey: "#F2F2F2",
+    transparentBackgroundGrey: "rgba(242, 242, 242, .6)",
     testBackgroundGrey: "#f1ece4",
     background: "#fff",
     white: "#fff",

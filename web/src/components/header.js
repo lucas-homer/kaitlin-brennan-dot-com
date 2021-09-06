@@ -14,10 +14,15 @@ const Header = () => {
         paddingY: 2,
         paddingX: 4,
         // these use values from `theme.colors`
-        backgroundColor: "backgroundGrey",
+        backgroundColor: "transparentBackgroundGrey",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
+        position: "sticky",
+        zIndex: "10",
+        top: 0,
+        backdropFilter: "saturate(180%) blur(20px)",
+        transition: "background-color 0.1 ease-in-out",
       }}
     >
       <Link
