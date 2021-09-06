@@ -58,6 +58,9 @@ function BlogPage(props) {
         }}
       >
         <Styled.h2>Kaitlin Has Opinions</Styled.h2>
+        <Styled.h6 sx={{ fontWeight: "normal" }}>
+          A semi-regular spray of links and other such content droplets.
+        </Styled.h6>
         {postNodes && <BlogPostList nodes={postNodes} />}
       </section>
     </Layout>

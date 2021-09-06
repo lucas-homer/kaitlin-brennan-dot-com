@@ -48,25 +48,23 @@ export default function SamplesLanding({ services, landingPageCopy }) {
               mb: [4, 6],
               variant: "cards.blogPreview",
               backgroundColor: "white",
-              transition: "filter 400ms",
-              "&:not(:disabled):hover": {
-                filter: "contrast(102%) drop-shadow(16px 16px 20px #CECECE)",
-              },
+              filter: "contrast(102%) drop-shadow(16px 16px 20px #CECECE)",
               textDecoration: "none",
               color: "text",
             }}
             key={service.id}
           >
-            <Styled.h5
+            <Styled.h4
               sx={{
                 color: "text",
                 textDecoration: "underline solid #FF4133",
                 fontStyle: "italic",
+                textAlign: "center",
                 mb: [4],
               }}
             >
               {service.title}
-            </Styled.h5>
+            </Styled.h4>
             <blockquote>
               <BlockText blocks={service._rawDescription} />
             </blockquote>
