@@ -51,6 +51,7 @@ export default function SamplesLanding({ services, landingPageCopy }) {
               filter: "contrast(102%) drop-shadow(16px 16px 20px #CECECE)",
               textDecoration: "none",
               color: "text",
+              py: [6],
             }}
             key={service.id}
           >
